@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="720" viewBox="0 0 520 360" role="img" aria-labelledby="title desc">
+  <title id="title">冷门神经</title>
+  <desc id="desc">Distinct low-poly sticker persona scene for 冷门神经.</desc>
+  <rect width="520" height="360" rx="28" fill="#ffffff"/>
+  <rect x="18" y="18" width="484" height="324" rx="24" fill="#dff1e6" opacity=".2"/>
+  <path d="M54 294 C136 333 386 335 466 292" fill="none" stroke="#e9eee6" stroke-width="18" stroke-linecap="round" opacity=".78"/>
+  
+    <rect x="44" y="246" width="430" height="16" rx="8" fill="#c7e6d4" opacity=".7"/>
+    <rect x="58" y="174" width="150" height="12" rx="6" fill="#a09cb4" opacity=".75"/>
+    <rect x="326" y="170" width="132" height="12" rx="6" fill="#a09cb4" opacity=".75"/>
+  <g transform="translate(102 128) scale(0.68)"><rect x="-42" y="-33" width="84" height="66" rx="6" fill="#fff" stroke="#4e4965" stroke-width="4"/><circle cx="20" cy="-9" r="9" fill="#60b783"/><path d="M-32 22 L-12 -2 L4 13 L18 1 L34 22 Z" fill="#98d0ae"/></g><g transform="translate(404 120) scale(0.5)"><polygon points="0,-54 13,-20 49,-35 29,-4 56,17 21,17 14,54 -5,24 -36,42 -22,8 -56,-4 -20,-15" fill="#60b783" /></g><g transform="translate(406 251) scale(0.54)"><path d="M-40 -18 H10 L40 12 L12 40 L-40 -12 Z" fill="#60b783"/><circle cx="-24" cy="-7" r="6" fill="#fff8e8"/><path d="M-2 6 H18" stroke="#4e4965" stroke-width="5" stroke-linecap="round"/></g>
+  
+    <g transform="translate(260 238) scale(1.22)">
+      <ellipse cx="0" cy="92" rx="78" ry="14" fill="#17201d" opacity=".14"/>
+      
+      
+        <path d="M-38 8 L-49.5 26 L-61 44" fill="none" stroke="#797295" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="-49.5" cy="26" r="4" fill="#60b783" opacity=".58"/>
+        <circle cx="-61" cy="44" r="10" fill="#efd3bc"/>
+        <circle cx="-61" cy="44" r="5" fill="#dcc2ad" opacity=".35"/>
+      
+        <path d="M38 8 L49.5 26 L61 44" fill="none" stroke="#797295" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="49.5" cy="26" r="4" fill="#60b783" opacity=".58"/>
+        <circle cx="61" cy="44" r="10" fill="#efd3bc"/>
+        <circle cx="61" cy="44" r="5" fill="#dcc2ad" opacity=".35"/>
+      
+      <polygon points="-47,-10 47,-10 63,62 -63,62" fill="#6d668c" />
+      <polygon points="-47,-10 0,7 -63,62" fill="#817b9c" opacity=".78"/>
+      <polygon points="47,-10 0,7 63,62" fill="#605a7b" opacity=".72"/>
+      <polygon points="-17,-25 17,-25 15,-8 -15,-8" fill="#d8b298"/>
+      <g transform="translate(0 -74) scale(1.72)">
+        <polygon points="-54,-30 -17,-65 38,-58 66,-19 52,38 0,56 -50,34" fill="#efd3bc" />
+        <polygon points="-54,-30 -17,-65 -7,-4 -50,34" fill="#f6dfcd" opacity=".76"/>
+        <polygon points="-17,-65 38,-58 8,-2 -7,-4" fill="#f1d7c3" />
+        <polygon points="38,-58 66,-19 52,38 8,-2" fill="#d8b298" opacity=".58"/>
+        <polygon points="-50,34 -7,-4 0,56" fill="#e3c8b3" opacity=".62"/>
+        <polygon points="8,-2 52,38 0,56" fill="#f0d5bf" opacity=".62"/>
+        <polygon points="-58,-20 -17,-70 35,-65 64,-34 46,-16 -7,-35" fill="#24282b" />
+        <polygon points="-17,-70 35,-65 51,-35 0,-44" fill="#505355" />
+        <polygon points="46,-16 69,-8 64,-34 38,-25" fill="#1d2022" />
+        <polygon points="-58,-20 -70,6 -50,0 -40,-39" fill="#1d2022" />
+        
+    <path d="M-28 -14 L-8 -18 M8 -18 L28 -14" stroke="#2d2520" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="-18" cy="-1" r="4" fill="#2d2520"/>
+    <circle cx="19" cy="-1" r="4" fill="#2d2520"/>
+    <polygon points="0,0 -8,14 8,13" fill="#dcc2ad" opacity=".75"/>
+    <path d="M-16 16 Q-2 22 16 15" fill="none" stroke="#854e4a" stroke-width="5" stroke-linecap="round"/>
+    
+  
+      </g>
+    </g>
+  
+  
+    <g transform="translate(34 42)">
+      <rect x="0" y="-20" width="184" height="36" rx="18" fill="#ffffff" opacity=".9"/>
+      <text x="16" y="2" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="800" fill="#26302c">Cold-Door-Nerve</text>
+    </g>
+  
+</svg>

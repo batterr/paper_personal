@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="720" viewBox="0 0 520 360" role="img" aria-labelledby="title desc">
+  <title id="title">破防喇叭</title>
+  <desc id="desc">Distinct low-poly sticker persona scene for 破防喇叭.</desc>
+  <rect width="520" height="360" rx="28" fill="#ffffff"/>
+  <rect x="18" y="18" width="484" height="324" rx="24" fill="#f8e0e5" opacity=".2"/>
+  <path d="M54 294 C136 333 386 335 466 292" fill="none" stroke="#e9eee6" stroke-width="18" stroke-linecap="round" opacity=".78"/>
+  <g transform="translate(102 123) scale(0.86)"><polygon points="-42,-8 6,-28 6,28 -42,8" fill="#dd637d" /><rect x="-55" y="-11" width="17" height="22" rx="5" fill="#475371"/><path d="M15 -24 Q43 -12 48 0 Q43 12 15 24" fill="none" stroke="#dd637d" stroke-width="6" stroke-linecap="round"/></g><g transform="translate(410 125) scale(0.66)"><ellipse cx="-18" cy="9" rx="27" ry="17" fill="#eeb1be"/><ellipse cx="9" cy="1" rx="31" ry="22" fill="#ea9eae"/><ellipse cx="34" cy="11" rx="21" ry="14" fill="#eca9b8"/><path d="M-18 37 L-25 54 M8 36 L1 55 M32 36 L24 53" stroke="#dd637d" stroke-width="5" stroke-linecap="round"/></g><g transform="translate(405 258) scale(0.52)"><polygon points="0,-45 44,34 -44,34" fill="#fff1b8" stroke="#475371" stroke-width="4"/><path d="M0 -18 V10" stroke="#475371" stroke-width="7" stroke-linecap="round"/><circle cx="0" cy="23" r="5" fill="#475371"/></g>
+  
+    <g transform="translate(205 246) scale(1.02)">
+      <ellipse cx="0" cy="92" rx="78" ry="14" fill="#17201d" opacity=".14"/>
+      
+        <polygon points="-28,50 -52,91 -32,91 -10,53" fill="#495574" />
+        <polygon points="28,50 52,91 32,91 10,53" fill="#526184" />
+        <rect x="-58" y="88" width="36" height="9" rx="4" fill="#1e2221"/>
+        <rect x="23" y="88" width="36" height="9" rx="4" fill="#1e2221"/>
+      
+      
+        <path d="M-38 8 L-62 -11 L-86 -30" fill="none" stroke="#6f7ea5" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="-62" cy="-11" r="4" fill="#dd637d" opacity=".58"/>
+        <circle cx="-86" cy="-30" r="10" fill="#efd3bc"/>
+        <circle cx="-86" cy="-30" r="5" fill="#dcc2ad" opacity=".35"/>
+      
+        <path d="M38 8 L62 -11 L86 -30" fill="none" stroke="#6f7ea5" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="62" cy="-11" r="4" fill="#dd637d" opacity=".58"/>
+        <circle cx="86" cy="-30" r="10" fill="#efd3bc"/>
+        <circle cx="86" cy="-30" r="5" fill="#dcc2ad" opacity=".35"/>
+      
+      <polygon points="-47,-10 47,-10 63,62 -63,62" fill="#62739d" />
+      <polygon points="-47,-10 0,7 -63,62" fill="#7887ab" opacity=".78"/>
+      <polygon points="47,-10 0,7 63,62" fill="#56658a" opacity=".72"/>
+      <polygon points="-17,-25 17,-25 15,-8 -15,-8" fill="#d8b298"/>
+      <g transform="translate(0 -74) scale(1.05)">
+        <polygon points="-54,-30 -17,-65 38,-58 66,-19 52,38 0,56 -50,34" fill="#efd3bc" />
+        <polygon points="-54,-30 -17,-65 -7,-4 -50,34" fill="#f6dfcd" opacity=".76"/>
+        <polygon points="-17,-65 38,-58 8,-2 -7,-4" fill="#f1d7c3" />
+        <polygon points="38,-58 66,-19 52,38 8,-2" fill="#d8b298" opacity=".58"/>
+        <polygon points="-50,34 -7,-4 0,56" fill="#e3c8b3" opacity=".62"/>
+        <polygon points="8,-2 52,38 0,56" fill="#f0d5bf" opacity=".62"/>
+        <polygon points="-58,-20 -17,-70 35,-65 64,-34 46,-16 -7,-35" fill="#24282b" />
+        <polygon points="-17,-70 35,-65 51,-35 0,-44" fill="#505355" />
+        <polygon points="46,-16 69,-8 64,-34 38,-25" fill="#1d2022" />
+        <polygon points="-58,-20 -70,6 -50,0 -40,-39" fill="#1d2022" />
+        
+    <path d="M-29 -24 L-8 -12 M8 -12 L29 -24" stroke="#2d2520" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="-18" cy="-1" r="6" fill="#2d2520"/>
+    <circle cx="19" cy="-1" r="6" fill="#2d2520"/>
+    <polygon points="0,0 -8,14 8,13" fill="#dcc2ad" opacity=".75"/>
+    <path d="M-18 24 Q0 5 19 24" fill="none" stroke="#854e4a" stroke-width="5" stroke-linecap="round"/>
+    <path d="M31 1 C41 14 39 27 28 29 C20 24 23 11 31 1 Z" fill="#eba1b1"/>
+  
+      </g>
+    </g>
+  
+  
+    <g transform="translate(34 42)">
+      <rect x="0" y="-20" width="184" height="36" rx="18" fill="#ffffff" opacity=".9"/>
+      <text x="16" y="2" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="800" fill="#26302c">Po-Fang-Laba</text>
+    </g>
+  
+</svg>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="720" viewBox="0 0 520 360" role="img" aria-labelledby="title desc">
+  <title id="title">表格阎王</title>
+  <desc id="desc">Distinct low-poly sticker persona scene for 表格阎王.</desc>
+  <rect width="520" height="360" rx="28" fill="#ffffff"/>
+  <rect x="18" y="18" width="484" height="324" rx="24" fill="#d5dfdb" opacity=".2"/>
+  <path d="M54 294 C136 333 386 335 466 292" fill="none" stroke="#e9eee6" stroke-width="18" stroke-linecap="round" opacity=".78"/>
+  <rect x="45" y="82" width="156" height="210" rx="14" fill="#fffef6" stroke="#546345" stroke-width="4"/><path d="M70 124 H176 M70 165 H176 M70 206 H176 M110 96 V272 M150 96 V272" stroke="#c5d2cc" stroke-width="5"/><path d="M317 90 H456 M317 128 H432" stroke="#2f5d49" stroke-width="8" stroke-linecap="round"/><g transform="translate(389 246) scale(0.7)"><rect x="-45" y="-35" width="90" height="70" rx="8" fill="#fffdf5" stroke="#566647" stroke-width="4"/><path d="M-28 18 L-8 2 L8 10 L30 -18" fill="none" stroke="#2f5d49" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></g>
+  
+    <g transform="translate(270 258) scale(0.92)">
+      <ellipse cx="0" cy="92" rx="78" ry="14" fill="#17201d" opacity=".14"/>
+      
+        <polygon points="-28,50 -52,91 -32,91 -10,53" fill="#596949" />
+        <polygon points="28,50 52,91 32,91 10,53" fill="#657753" />
+        <rect x="-58" y="88" width="36" height="9" rx="4" fill="#1e2221"/>
+        <rect x="23" y="88" width="36" height="9" rx="4" fill="#1e2221"/>
+      
+      
+        <path d="M-38 10 L-49 29 L-60 48" fill="none" stroke="#83976f" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="-49" cy="29" r="4" fill="#2f5d49" opacity=".58"/>
+        <circle cx="-60" cy="48" r="10" fill="#efd3bc"/>
+        <circle cx="-60" cy="48" r="5" fill="#dcc2ad" opacity=".35"/>
+      
+        <path d="M38 10 L63 22 L88 34" fill="none" stroke="#83976f" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="63" cy="22" r="4" fill="#2f5d49" opacity=".58"/>
+        <circle cx="88" cy="34" r="10" fill="#efd3bc"/>
+        <circle cx="88" cy="34" r="5" fill="#dcc2ad" opacity=".35"/>
+      
+      <polygon points="-47,-10 47,-10 63,62 -63,62" fill="#788e63" />
+      <polygon points="-47,-10 0,7 -63,62" fill="#8b9e79" opacity=".78"/>
+      <polygon points="47,-10 0,7 63,62" fill="#6a7d57" opacity=".72"/>
+      <polygon points="-17,-25 17,-25 15,-8 -15,-8" fill="#d8b298"/>
+      <g transform="translate(0 -74) scale(1.08)">
+        <polygon points="-54,-30 -17,-65 38,-58 66,-19 52,38 0,56 -50,34" fill="#efd3bc" />
+        <polygon points="-54,-30 -17,-65 -7,-4 -50,34" fill="#f6dfcd" opacity=".76"/>
+        <polygon points="-17,-65 38,-58 8,-2 -7,-4" fill="#f1d7c3" />
+        <polygon points="38,-58 66,-19 52,38 8,-2" fill="#d8b298" opacity=".58"/>
+        <polygon points="-50,34 -7,-4 0,56" fill="#e3c8b3" opacity=".62"/>
+        <polygon points="8,-2 52,38 0,56" fill="#f0d5bf" opacity=".62"/>
+        <polygon points="-58,-20 -17,-70 35,-65 64,-34 46,-16 -7,-35" fill="#24282b" />
+        <polygon points="-17,-70 35,-65 51,-35 0,-44" fill="#505355" />
+        <polygon points="46,-16 69,-8 64,-34 38,-25" fill="#1d2022" />
+        <polygon points="-58,-20 -70,6 -50,0 -40,-39" fill="#1d2022" />
+        
+    <path d="M-28 -15 H-6 M6 -15 H29" stroke="#2d2520" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="-18" cy="-1" r="4" fill="#2d2520"/>
+    <circle cx="19" cy="-1" r="4" fill="#2d2520"/>
+    <polygon points="0,0 -8,14 8,13" fill="#dcc2ad" opacity=".75"/>
+    <path d="M-18 17 H18" stroke="#854e4a" stroke-width="5" stroke-linecap="round"/>
+    
+  
+      </g>
+    </g>
+  
+  
+    <g transform="translate(34 42)">
+      <rect x="0" y="-20" width="184" height="36" rx="18" fill="#ffffff" opacity=".9"/>
+      <text x="16" y="2" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="800" fill="#26302c">Excel-Yan-Wang</text>
+    </g>
+  
+</svg>
