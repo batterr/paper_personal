@@ -7,10 +7,13 @@ export type QuizOption = {
   score: ScoreMap;
 };
 
+export type QuestionCategory = "formal" | "chaos" | "random";
+
 export type MainQuestion = {
   id: string;
   type: "main";
   dimension: DimensionKey;
+  category: QuestionCategory;
   title: string;
   options: QuizOption[];
 };
@@ -44,30 +47,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q1",
     "type": "main",
     "dimension": "X",
-    "title": "收到一款新造景贴纸，你第一反应更像？",
+    "category": "formal",
+    "title": "你看到一张贴纸平均分很高，但评论里反复提到“遮挡部分看不清”，你更像？",
     "options": [
       {
         "key": "A",
-        "label": "先看看图和参数，确认它是什么",
+        "label": "分高就行，先入再说",
         "score": {}
       },
       {
         "key": "B",
-        "label": "想想它适合放在哪一页或哪一角",
+        "label": "先看看是不是还能靠经验救回来",
         "score": {
           "X": 1
         }
       },
       {
         "key": "C",
-        "label": "马上试摆一下构图，看能不能出片",
+        "label": "会脑补它贴进场景后能不能绕开这个坑",
         "score": {
           "X": 2
         }
       },
       {
         "key": "D",
-        "label": "脑内已经把主题、光影和背景纸都配好了",
+        "label": "已经在想怎么通过构图和前景把它遮挡问题反杀了",
         "score": {
           "X": 3
         }
@@ -78,30 +82,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q2",
     "type": "main",
     "dimension": "D",
-    "title": "写点评时发现贴感一般，你会怎么处理？",
+    "category": "formal",
+    "title": "真实评论里有人写“图很美，但拆分逻辑像在整我”，你的反应更像？",
     "options": [
       {
         "key": "A",
-        "label": "不写了，怕说重了",
+        "label": "我一般不评价，别人觉得行就行",
         "score": {}
       },
       {
         "key": "B",
-        "label": "温和写一句“还行，但没有惊喜”",
+        "label": "记一句：设计好看，体验一般",
         "score": {
           "D": 1
         }
       },
       {
         "key": "C",
-        "label": "把产品质量、画面设计、贴感体验拆开说清楚",
+        "label": "会分开讲设计分、质量分、贴感分",
         "score": {
           "D": 2
         }
       },
       {
         "key": "D",
-        "label": "直接写雷点，后来人少花冤枉钱",
+        "label": "直接把问题点写完整，免得下一个人也被创",
         "score": {
           "D": 3
         }
@@ -112,30 +117,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q3",
     "type": "main",
     "dimension": "G",
-    "title": "看到一款画风冷门、甚至有点怪的造景贴纸，你会？",
+    "category": "formal",
+    "title": "你刷到一张想要人数不高、但评论区有人狂夸“小动物小故事很有意思”的贴纸，会？",
     "options": [
       {
         "key": "A",
-        "label": "先划走，怕买回来不会用",
+        "label": "没那么多人想要，多半算了",
         "score": {}
       },
       {
         "key": "B",
-        "label": "多看两眼，但不一定下手",
+        "label": "先收藏，等别人再夸几轮",
         "score": {
           "G": 1
         }
       },
       {
         "key": "C",
-        "label": "加入想贴，等一个合适场景",
+        "label": "有点想试，这种冷门叙事我会多看两眼",
         "score": {
           "G": 2
         }
       },
       {
         "key": "D",
-        "label": "怪得刚刚好，我甚至想专门为它搭一页",
+        "label": "越是这种偏门小世界，我越想亲自进去贴一遍",
         "score": {
           "G": 3
         }
@@ -146,30 +152,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q4",
     "type": "main",
     "dimension": "T",
-    "title": "同商家同系列只差最后一款没收，你通常会？",
+    "category": "formal",
+    "title": "看到一张贴纸拥有人数很高、评论数也高，但你还没收，你会？",
     "options": [
       {
         "key": "A",
-        "label": "差就差吧，系列不完整也能活",
+        "label": "高就高吧，不代表我必须有",
         "score": {}
       },
       {
         "key": "B",
-        "label": "先记一下，刷到再说",
+        "label": "先放愿望单，回头再看",
         "score": {
           "T": 1
         }
       },
       {
         "key": "C",
-        "label": "加进想贴，等补货或二手出现",
+        "label": "会开始核对自己是不是缺这张",
         "score": {
           "T": 2
         }
       },
       {
         "key": "D",
-        "label": "收纳仓里少这一格，我看着就难受",
+        "label": "这种大家都有而我没有，会让我像库存掉队",
         "score": {
           "T": 3
         }
@@ -180,30 +187,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q5",
     "type": "main",
     "dimension": "Q",
-    "title": "发现页刷到一款冷门但高分的贴纸，你更可能？",
+    "category": "formal",
+    "title": "发现某张贴纸评论很多，但大家都只说“好看”，你通常会？",
     "options": [
       {
         "key": "A",
-        "label": "自己看看，不太参与",
+        "label": "无所谓，反正我自己判断",
         "score": {}
       },
       {
         "key": "B",
-        "label": "点个赞或收藏，算是支持",
+        "label": "点个收藏等更详细的人出现",
         "score": {
           "Q": 1
         }
       },
       {
         "key": "C",
-        "label": "补一句短评，让别人知道它好在哪里",
+        "label": "如果我用过，会补一条更具体的",
         "score": {
           "Q": 2
         }
       },
       {
         "key": "D",
-        "label": "带图点评，把它从角落推到点评墙上",
+        "label": "我会忍不住把尺寸、贴感、雷点一次说完",
         "score": {
           "Q": 3
         }
@@ -214,30 +222,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q6",
     "type": "main",
     "dimension": "R",
-    "title": "一张贴纸已经贴进作品里了，你还会反复回看，主要因为？",
+    "category": "formal",
+    "title": "真实数据里很多人会写“贴完会反复欣赏”，你更接近哪种心态？",
     "options": [
       {
         "key": "A",
-        "label": "确认一下它确实已贴",
+        "label": "贴完就完了，下一张",
         "score": {}
       },
       {
         "key": "B",
-        "label": "看看当时贴得顺不顺手",
+        "label": "主要回看是不是贴整齐了",
         "score": {
           "R": 1
         }
       },
       {
         "key": "C",
-        "label": "那一页的氛围还挺像当时的我",
+        "label": "会回看那一页当时的气氛",
         "score": {
           "R": 2
         }
       },
       {
         "key": "D",
-        "label": "它像我的一小段造景史，不能只当库存看",
+        "label": "会觉得那不是一张贴纸，是我那阵子的精神切片",
         "score": {
           "R": 3
         }
@@ -248,30 +257,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q7",
     "type": "main",
     "dimension": "X",
-    "title": "正式开始拼贴前，你通常怎么开局？",
+    "category": "chaos",
+    "title": "如果一张普通街景贴到你手里，你最容易把它整成什么？",
     "options": [
       {
         "key": "A",
-        "label": "找个空位，能贴下就行",
+        "label": "还是普通街景",
         "score": {}
       },
       {
         "key": "B",
-        "label": "按尺寸和颜色大概排一下",
+        "label": "普通街景 plus 一点顺眼摆位",
         "score": {
           "X": 1
         }
       },
       {
         "key": "C",
-        "label": "先试构图，看看主角和留白怎么放",
+        "label": "深夜街头、小雨将至、路灯开麦",
         "score": {
           "X": 2
         }
       },
       {
         "key": "D",
-        "label": "主题、层次、配件都要到位，不然不算开工",
+        "label": "赛博贫民窟爱情开场前 3 秒",
         "score": {
           "X": 3
         }
@@ -282,30 +292,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q8",
     "type": "main",
     "dimension": "D",
-    "title": "别人问你“这款值不值得买”，你会怎么说？",
+    "category": "chaos",
+    "title": "朋友说一张贴纸“绝美，闭眼冲”，你心里第一句通常是？",
     "options": [
       {
         "key": "A",
-        "label": "看你喜好吧，我不好说",
+        "label": "好的好的",
         "score": {}
       },
       {
         "key": "B",
-        "label": "先报价格和商家，让对方自己判断",
+        "label": "你先别喊，我再看看",
         "score": {
           "D": 1
         }
       },
       {
         "key": "C",
-        "label": "会讲材质、画面、贴感和适合场景",
+        "label": "美在哪、难在哪、坑在哪，展开讲讲",
         "score": {
           "D": 2
         }
       },
       {
         "key": "D",
-        "label": "直接总结：值不值、坑在哪、谁适合买",
+        "label": "闭眼冲的通常都是我睁眼避雷的对象",
         "score": {
           "D": 3
         }
@@ -316,30 +327,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q9",
     "type": "main",
     "dimension": "G",
-    "title": "给贴纸选参考标签时，你更容易被哪类标签打动？",
+    "category": "chaos",
+    "title": "下面哪种标签最容易把你勾进去？",
     "options": [
       {
         "key": "A",
-        "label": "通用、百搭、好上手",
+        "label": "治愈系百搭",
         "score": {}
       },
       {
         "key": "B",
-        "label": "可爱、清新、复古这种稳妥词",
+        "label": "复古氛围感",
         "score": {
           "G": 1
         }
       },
       {
         "key": "C",
-        "label": "暗黑、破碎、边角料感这种偏门词",
+        "label": "阴湿、破碎、边角料文学",
         "score": {
           "G": 2
         }
       },
       {
         "key": "D",
-        "label": "固定标签不够，我想自己写个怪但精准的",
+        "label": "像做梦时捡来的怪图，但越看越上头",
         "score": {
           "G": 3
         }
@@ -350,30 +362,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q10",
     "type": "main",
     "dimension": "T",
-    "title": "收纳仓里“拥有”和“已贴”数量对不上时，你会？",
+    "category": "formal",
+    "title": "你会不会在意一张贴纸的价格、尺寸和材质是否匹配？",
     "options": [
       {
         "key": "A",
-        "label": "不影响我用，先放着",
+        "label": "不太看，喜欢就买",
         "score": {}
       },
       {
         "key": "B",
-        "label": "想起来才改一下",
+        "label": "大概看一下，别太离谱",
         "score": {
           "T": 1
         }
       },
       {
         "key": "C",
-        "label": "会把拥有数量和已贴数量补准确",
+        "label": "会结合尺寸和材质判断值不值",
         "score": {
           "T": 2
         }
       },
       {
         "key": "D",
-        "label": "还要顺手补购买价，不然总价和均价不干净",
+        "label": "我脑子里甚至会自动算每平方厘米多少钱",
         "score": {
           "T": 3
         }
@@ -384,30 +397,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q11",
     "type": "main",
     "dimension": "Q",
-    "title": "商家详情里一堆“已贴未评”，你看见后更像？",
+    "category": "formal",
+    "title": "评论区有人问“这张到底值不值”，你更像哪种回复者？",
     "options": [
       {
         "key": "A",
-        "label": "知道了，但不一定补",
+        "label": "不回复",
         "score": {}
       },
       {
         "key": "B",
-        "label": "挑一张最有话说的补一下",
+        "label": "回一句看你喜不喜欢图",
         "score": {
           "Q": 1
         }
       },
       {
         "key": "C",
-        "label": "按系列慢慢补，别让好用的贴纸没声音",
+        "label": "会告诉对方适合谁、不适合谁",
         "score": {
           "Q": 2
         }
       },
       {
         "key": "D",
-        "label": "感觉自己在给这个商家做体验档案",
+        "label": "我会像客服下班后的人间说明书一样详细",
         "score": {
           "Q": 3
         }
@@ -418,30 +432,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q12",
     "type": "main",
     "dimension": "R",
-    "title": "给贴纸拍图点评时，你最想拍出什么？",
+    "category": "chaos",
+    "title": "有些人贴完会舍不得翻页，你更像？",
     "options": [
       {
         "key": "A",
-        "label": "拍清楚就行，别糊",
+        "label": "不存在，翻就翻了",
         "score": {}
       },
       {
         "key": "B",
-        "label": "展示尺寸、材质和实物颜色",
+        "label": "好看会多看两眼",
         "score": {
           "R": 1
         }
       },
       {
         "key": "C",
-        "label": "拍它贴进场景后的氛围",
+        "label": "会想把那页留久一点",
         "score": {
           "R": 2
         }
       },
       {
         "key": "D",
-        "label": "拍到像它终于住进了那个画面里",
+        "label": "那不是一页，是我亲手搭出来的情绪现场",
         "score": {
           "R": 3
         }
@@ -452,30 +467,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q13",
     "type": "main",
     "dimension": "X",
-    "title": "一张普通贴纸到你手里，怎么才算被用出效果？",
+    "category": "formal",
+    "title": "真实评论里经常提到“大块地板和壁纸容易出气泡”，这类贴纸你会怎么处理？",
     "options": [
       {
         "key": "A",
-        "label": "平贴整齐就可以",
+        "label": "避开，不想管",
         "score": {}
       },
       {
         "key": "B",
-        "label": "颜色别太冲突就行",
+        "label": "慢一点贴，问题不大",
         "score": {
           "X": 1
         }
       },
       {
         "key": "C",
-        "label": "要跟背景纸、便签或小物搭起来",
+        "label": "先想好顺序、工具和留白再上手",
         "score": {
           "X": 2
         }
       },
       {
         "key": "D",
-        "label": "它最好变成整个微型世界的主角",
+        "label": "我会把整页当施工现场，先布景再落贴",
         "score": {
           "X": 3
         }
@@ -486,30 +502,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q14",
     "type": "main",
     "dimension": "D",
-    "title": "看到一条只写“很好看”的水点评，你通常会？",
+    "category": "formal",
+    "title": "遇到评论区常见的“无功无过，顺利贴完”，你会？",
     "options": [
       {
         "key": "A",
-        "label": "算了，大家开心就好",
+        "label": "挺好，省字",
         "score": {}
       },
       {
         "key": "B",
-        "label": "心里想：那到底哪里好看",
+        "label": "觉得还差一点信息",
         "score": {
           "D": 1
         }
       },
       {
         "key": "C",
-        "label": "会补充真实贴感和使用限制",
+        "label": "想知道到底顺在哪里、平在哪里",
         "score": {
           "D": 2
         }
       },
       {
         "key": "D",
-        "label": "想写一条对照组，把优缺点掰开讲",
+        "label": "这类点评在我眼里和没说差不多",
         "score": {
           "D": 3
         }
@@ -520,30 +537,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q15",
     "type": "main",
     "dimension": "G",
-    "title": "什么最容易让你点“想贴”？",
+    "category": "random",
+    "title": "你选贴纸时更像在选哪一种 BGM？",
     "options": [
       {
         "key": "A",
-        "label": "大家都说好用，跟着点不亏",
+        "label": "热门榜单稳稳的",
         "score": {}
       },
       {
         "key": "B",
-        "label": "封面顺眼、商家靠谱",
+        "label": "轻松好听，不出错",
         "score": {
           "G": 1
         }
       },
       {
         "key": "C",
-        "label": "细节、材质或构图有少见的点",
+        "label": "有点怪，但越听越顺",
         "score": {
           "G": 2
         }
       },
       {
         "key": "D",
-        "label": "它怪到让我想看看自己能不能驾驭",
+        "label": "像别人听了会问你最近精神还好吗的那种",
         "score": {
           "G": 3
         }
@@ -554,30 +572,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q16",
     "type": "main",
     "dimension": "T",
-    "title": "购买价和数量字段，你通常会怎么填？",
+    "category": "formal",
+    "title": "看到真实数据里的 `用时` 大多是 `1h / 2h / 3h`，你第一反应是？",
     "options": [
       {
         "key": "A",
-        "label": "不填，反正贴纸已经到手了",
+        "label": "时间随缘",
         "score": {}
       },
       {
         "key": "B",
-        "label": "只记比较贵或印象深的",
+        "label": "大概知道别太晚开始就行",
         "score": {
           "T": 1
         }
       },
       {
         "key": "C",
-        "label": "尽量补，方便看商家总价",
+        "label": "会预估今天有没有完整时间贴完",
         "score": {
           "T": 2
         }
       },
       {
         "key": "D",
-        "label": "均价、渠道、数量都要对齐，不然我会惦记",
+        "label": "我连贴之前什么时候上厕所都想一并规划好",
         "score": {
           "T": 3
         }
@@ -588,30 +607,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q17",
     "type": "main",
     "dimension": "Q",
-    "title": "你写点评时，最希望它起什么作用？",
+    "category": "chaos",
+    "title": "你安利一张贴纸时，更像哪种人？",
     "options": [
       {
         "key": "A",
-        "label": "留个记录，证明我用过",
+        "label": "发个链接就跑",
         "score": {}
       },
       {
         "key": "B",
-        "label": "以后自己回看时有依据",
+        "label": "说一句‘这张还行’",
         "score": {
           "Q": 1
         }
       },
       {
         "key": "C",
-        "label": "帮别人判断它适不适合拼贴",
+        "label": "会讲它为什么好贴、好看、好搭",
         "score": {
           "Q": 2
         }
       },
       {
         "key": "D",
-        "label": "让后来者直接按我的安利或避坑走",
+        "label": "能从材质讲到人生，最后把人说到下单",
         "score": {
           "Q": 3
         }
@@ -622,30 +642,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q18",
     "type": "main",
     "dimension": "R",
-    "title": "一个已贴作品最让你不舍的是什么？",
+    "category": "formal",
+    "title": "真实评论里常出现“图很漂亮，但人物形象让我扣分”，这最像你哪种状态？",
     "options": [
       {
         "key": "A",
-        "label": "贴纸本身还挺好看",
+        "label": "我一般不代入这些",
         "score": {}
       },
       {
         "key": "B",
-        "label": "商家和系列值得记住",
+        "label": "会轻微受影响",
         "score": {
           "R": 1
         }
       },
       {
         "key": "C",
-        "label": "完成那一刻很爽",
+        "label": "人物和情绪会影响我整页的感觉",
         "score": {
           "R": 2
         }
       },
       {
         "key": "D",
-        "label": "画面里像藏着我当时的状态",
+        "label": "只要画面气质不对，我整个人都贴不进去",
         "score": {
           "R": 3
         }
@@ -656,30 +677,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q19",
     "type": "main",
     "dimension": "X",
-    "title": "发布带图点评时，你的配图风格更像？",
+    "category": "random",
+    "title": "如果你要给自己今天的贴纸 session 起一个名字，会更像？",
     "options": [
       {
         "key": "A",
-        "label": "随手拍一张，能看清就行",
+        "label": "贴一下而已",
         "score": {}
       },
       {
         "key": "B",
-        "label": "尽量拍清楚材质和大小",
+        "label": "周末小手工",
         "score": {
           "X": 1
         }
       },
       {
         "key": "C",
-        "label": "会挑角度，让画面看起来舒服",
+        "label": "今晚有点想认真做一页",
         "score": {
           "X": 2
         }
       },
       {
         "key": "D",
-        "label": "像给这款贴纸拍小型作品集",
+        "label": "《一个人偷偷搭世界》特别篇",
         "score": {
           "X": 3
         }
@@ -690,30 +712,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q20",
     "type": "main",
     "dimension": "D",
-    "title": "贴纸质量翻车时，你会怎么点评？",
+    "category": "chaos",
+    "title": "一张贴纸让你贴到一半想骂人时，你会怎么发言？",
     "options": [
       {
         "key": "A",
-        "label": "忍了，不想写差评",
+        "label": "忍住，不发",
         "score": {}
       },
       {
         "key": "B",
-        "label": "扣点分，但正文轻轻带过",
+        "label": "吐槽一句有点烦",
         "score": {
           "D": 1
         }
       },
       {
         "key": "C",
-        "label": "说清楚起翘、掉色、粘性或切模问题",
+        "label": "边骂边总结到底烦在哪",
         "score": {
           "D": 2
         }
       },
       {
         "key": "D",
-        "label": "图文并茂公开处刑，但每句话都有证据",
+        "label": "我会把它写成一份证据链完整的受害者陈述",
         "score": {
           "D": 3
         }
@@ -724,30 +747,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q21",
     "type": "main",
     "dimension": "G",
-    "title": "碰到几乎没人点评的小众商家，你会？",
+    "category": "formal",
+    "title": "真实数据里有 `参考图清晰`、`遮挡部分看不清`、`整体看不清` 这类差异，你最在意哪种？",
     "options": [
       {
         "key": "A",
-        "label": "先不碰，等别人试水",
+        "label": "都还好，能贴就行",
         "score": {}
       },
       {
         "key": "B",
-        "label": "看看价格和图，谨慎一点",
+        "label": "图别太糊就行",
         "score": {
           "G": 1
         }
       },
       {
         "key": "C",
-        "label": "买一张观察，顺便补第一条体验",
+        "label": "参考图只要不清楚，我兴趣会掉一半",
         "score": {
           "G": 2
         }
       },
       {
         "key": "D",
-        "label": "越没人评越有探索欲，我就是要挖冷门",
+        "label": "参考图本身也是审美的一部分，糊就是气质塌了",
         "score": {
           "G": 3
         }
@@ -758,30 +782,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q22",
     "type": "main",
     "dimension": "T",
-    "title": "收纳仓筛选里，你最常点哪个入口？",
+    "category": "formal",
+    "title": "你会不会盯想要人数、已贴人数、拥有人数这种数据？",
     "options": [
       {
         "key": "A",
-        "label": "很少筛，直接翻",
+        "label": "完全不看",
         "score": {}
       },
       {
         "key": "B",
-        "label": "先看拥有，知道自己有什么",
+        "label": "偶尔看，图个参考",
         "score": {
           "T": 1
         }
       },
       {
         "key": "C",
-        "label": "常看未贴和未评，提醒自己补作业",
+        "label": "会拿来辅助判断是否值得收",
         "score": {
           "T": 2
         }
       },
       {
         "key": "D",
-        "label": "按商家、系列、价格、状态轮番盘一遍",
+        "label": "这些数字像一套民意系统，我很难不看",
         "score": {
           "T": 3
         }
@@ -792,30 +817,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q23",
     "type": "main",
     "dimension": "Q",
-    "title": "点评区有人问“这款怎么搭”，你会？",
+    "category": "formal",
+    "title": "评论区有人只放图不写字，你通常会？",
     "options": [
       {
         "key": "A",
-        "label": "看看就走，我不太回",
+        "label": "图能看懂就行",
         "score": {}
       },
       {
         "key": "B",
-        "label": "简单说一句适合什么风格",
+        "label": "希望他至少写两句",
         "score": {
           "Q": 1
         }
       },
       {
         "key": "C",
-        "label": "会推荐同商家系列或相近材质",
+        "label": "如果我也用过，会补文字说明",
         "score": {
           "Q": 2
         }
       },
       {
         "key": "D",
-        "label": "顺手写成搭配小教程，省得大家乱买",
+        "label": "我会恨不得替他把使用报告写完",
         "score": {
           "Q": 3
         }
@@ -826,30 +852,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q24",
     "type": "main",
     "dimension": "R",
-    "title": "你最容易因为什么给一款贴纸高分？",
+    "category": "random",
+    "title": "你更容易因为什么对一张贴纸产生感情？",
     "options": [
       {
         "key": "A",
-        "label": "质量稳定，不出错",
+        "label": "没什么感情，工具而已",
         "score": {}
       },
       {
         "key": "B",
-        "label": "画面好看，贴起来顺手",
+        "label": "因为它确实挺好看",
         "score": {
           "R": 1
         }
       },
       {
         "key": "C",
-        "label": "一贴上去，整页氛围就对了",
+        "label": "因为它陪我完成了一页很顺的作品",
         "score": {
           "R": 2
         }
       },
       {
         "key": "D",
-        "label": "它让我的造景突然有故事了",
+        "label": "因为它和我那天的状态绑定得过于牢固",
         "score": {
           "R": 3
         }
@@ -860,30 +887,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q25",
     "type": "main",
     "dimension": "X",
-    "title": "如果一张贴纸本身不够出片，你会？",
+    "category": "chaos",
+    "title": "如果一张贴纸本身平平无奇，你会怎么救？",
     "options": [
       {
         "key": "A",
-        "label": "放弃，它不适合我",
+        "label": "不救，随它去",
         "score": {}
       },
       {
         "key": "B",
-        "label": "放在边角，当小装饰",
+        "label": "放角落里别太显眼",
         "score": {
           "X": 1
         }
       },
       {
         "key": "C",
-        "label": "加背景纸、便签或小贴补氛围",
+        "label": "用背景纸和配件给它抬一下咖位",
         "score": {
           "X": 2
         }
       },
       {
         "key": "D",
-        "label": "重搭一整套场景把它救活",
+        "label": "给它硬写一段世界观，把它捧成主角",
         "score": {
           "X": 3
         }
@@ -894,30 +922,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q26",
     "type": "main",
     "dimension": "D",
-    "title": "你最不能忍哪种点评盲区？",
+    "category": "formal",
+    "title": "真实评论里常见的低分原因之一是“留胶、返工、气泡”，你写这类评价时更像？",
     "options": [
       {
         "key": "A",
-        "label": "没有，大家随便写写也行",
+        "label": "太麻烦了，不写",
         "score": {}
       },
       {
         "key": "B",
-        "label": "不说实际尺寸，只说好看",
+        "label": "简单提醒一句",
         "score": {
           "D": 1
         }
       },
       {
         "key": "C",
-        "label": "不说贴感体验，只会夸可爱",
+        "label": "会把问题出现的时机和后果写清楚",
         "score": {
           "D": 2
         }
       },
       {
         "key": "D",
-        "label": "起翘、透明边、切模问题全都不提",
+        "label": "我连‘不到 5 分钟就留胶’这种证词都想保留下来",
         "score": {
           "D": 3
         }
@@ -928,30 +957,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q27",
     "type": "main",
     "dimension": "G",
-    "title": "面对爆款造景贴，你更像？",
+    "category": "chaos",
+    "title": "面对平台爆款，你更常见的心理活动是？",
     "options": [
       {
         "key": "A",
-        "label": "安心买，爆款有爆款的道理",
+        "label": "爆就买，省心",
         "score": {}
       },
       {
         "key": "B",
-        "label": "看腻了，但确实能用",
+        "label": "先看是不是确实好用",
         "score": {
           "G": 1
         }
       },
       {
         "key": "C",
-        "label": "想找一个没那么撞款的替代",
+        "label": "我会想找一个不那么撞的同类替身",
         "score": {
           "G": 2
         }
       },
       {
         "key": "D",
-        "label": "越爆我越想反着来，冷门角落才有意思",
+        "label": "它越爆，我越想去角落捡奇怪宝贝",
         "score": {
           "G": 3
         }
@@ -962,30 +992,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q28",
     "type": "main",
     "dimension": "T",
-    "title": "一张库存贴纸很久没贴，你通常怎么想？",
+    "category": "random",
+    "title": "如果你今天只剩 18 分钟空闲，你最可能？",
     "options": [
       {
         "key": "A",
-        "label": "可能会忘，问题不大",
+        "label": "那就不贴了",
         "score": {}
       },
       {
         "key": "B",
-        "label": "有空再贴，总会轮到",
+        "label": "随手看两眼库存",
         "score": {
           "T": 1
         }
       },
       {
         "key": "C",
-        "label": "会在未贴里看到它，提醒自己别浪费",
+        "label": "挑一张短平快的先贴掉",
         "score": {
           "T": 2
         }
       },
       {
         "key": "D",
-        "label": "它在收纳仓里像一项未完成任务",
+        "label": "18 分钟也够我盘一次想贴、拥有和未评三栏",
         "score": {
           "T": 3
         }
@@ -996,30 +1027,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q29",
     "type": "main",
     "dimension": "Q",
-    "title": "你整理商家均分和已评状态，最主要是为了？",
+    "category": "chaos",
+    "title": "当你发现一张冷门贴纸被误解了，你会？",
     "options": [
       {
         "key": "A",
-        "label": "系统有就看看，不特意管",
+        "label": "算了，路人甲自有命数",
         "score": {}
       },
       {
         "key": "B",
-        "label": "方便自己以后回购或避开",
+        "label": "小声说一句其实还行",
         "score": {
           "Q": 1
         }
       },
       {
         "key": "C",
-        "label": "以后给别人推荐时有依据",
+        "label": "补一条评价给它正名",
         "score": {
           "Q": 2
         }
       },
       {
         "key": "D",
-        "label": "我需要一套可公开安利和避雷的榜单",
+        "label": "我会像民间申冤人一样把它救回评论区",
         "score": {
           "Q": 3
         }
@@ -1030,30 +1062,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q30",
     "type": "main",
     "dimension": "R",
-    "title": "如果要取消收纳一张贴纸，你最容易卡在哪一步？",
+    "category": "random",
+    "title": "你删照片会手软，还是删已贴记录会手软？",
     "options": [
       {
         "key": "A",
-        "label": "不卡，确认不用就删",
+        "label": "都不手软",
         "score": {}
       },
       {
         "key": "B",
-        "label": "用过就够了，偶尔可惜",
+        "label": "照片会留一点",
         "score": {
           "R": 1
         }
       },
       {
         "key": "C",
-        "label": "会想起当时贴过的那一页",
+        "label": "已贴记录更容易让我犹豫",
         "score": {
           "R": 2
         }
       },
       {
         "key": "D",
-        "label": "像从自己的造景史里剪掉一页",
+        "label": "我对自己的贴纸痕迹有种离谱的考古感",
         "score": {
           "R": 3
         }
@@ -1064,30 +1097,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q31",
     "type": "main",
     "dimension": "X",
-    "title": "一页拼贴怎么才算被你“贴活了”？",
+    "category": "formal",
+    "title": "真实评论里常提到“辅助贴、刮板、硬卡”，你对工具的态度更像？",
     "options": [
       {
         "key": "A",
-        "label": "能贴下就行",
+        "label": "有就用，没有也能贴",
         "score": {}
       },
       {
         "key": "B",
-        "label": "颜色不打架，基本就过关",
+        "label": "大块素材时会想起来找",
         "score": {
           "X": 1
         }
       },
       {
         "key": "C",
-        "label": "前景和背景得互相托住",
+        "label": "会按画面难度提前准备工具",
         "score": {
           "X": 2
         }
       },
       {
         "key": "D",
-        "label": "像一小帧有呼吸感的场景，才算真的活了",
+        "label": "工具不到位，我连开贴仪式都不完整",
         "score": {
           "X": 3
         }
@@ -1098,30 +1132,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q32",
     "type": "main",
     "dimension": "D",
-    "title": "别人夸一款贴纸“绝美”，但没写任何细节，你最可能？",
+    "category": "formal",
+    "title": "碰到一条高分评论只写“超级美、放心入”，你会默认它是？",
     "options": [
       {
         "key": "A",
-        "label": "划走，懒得较真",
+        "label": "正常夸夸",
         "score": {}
       },
       {
         "key": "B",
-        "label": "心里会想：那到底美在哪",
+        "label": "有参考价值，但不多",
         "score": {
           "D": 1
         }
       },
       {
         "key": "C",
-        "label": "想补一句真实贴感和适用场景",
+        "label": "需要结合标签和其他评论一起看",
         "score": {
           "D": 2
         }
       },
       {
         "key": "D",
-        "label": "想直接写条对照点评把话说完整",
+        "label": "这是典型快乐发言，不是有效情报",
         "score": {
           "D": 3
         }
@@ -1132,30 +1167,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q33",
     "type": "main",
     "dimension": "G",
-    "title": "下面哪种新品最容易让你破防下单？",
+    "category": "random",
+    "title": "你更愿意贴哪种“怪东西”？",
     "options": [
       {
         "key": "A",
-        "label": "稳定百搭的热门款",
+        "label": "最好别怪",
         "score": {}
       },
       {
         "key": "B",
-        "label": "轻复古、轻胶片这类安全区风格",
+        "label": "小怪可以，大怪不行",
         "score": {
           "G": 1
         }
       },
       {
         "key": "C",
-        "label": "元素混搭、细节古怪但还算好驾驭",
+        "label": "怪得有细节，我会喜欢",
         "score": {
           "G": 2
         }
       },
       {
         "key": "D",
-        "label": "像废墟边角料一样怪，但怪得特别对胃口",
+        "label": "越像梦里捡来的，越让我想试",
         "score": {
           "G": 3
         }
@@ -1166,30 +1202,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q34",
     "type": "main",
     "dimension": "T",
-    "title": "看到某系列的断货提醒，你第一反应通常是？",
+    "category": "chaos",
+    "title": "你有没有过这种瞬间：凌晨突然想起某张贴纸还没补评？",
     "options": [
       {
         "key": "A",
-        "label": "无感，断了就断了",
+        "label": "没有，我心态稳定",
         "score": {}
       },
       {
         "key": "B",
-        "label": "先点个收藏，改天再看",
+        "label": "想起过，但又睡了",
         "score": {
           "T": 1
         }
       },
       {
         "key": "C",
-        "label": "立刻核对自己库存里还缺什么",
+        "label": "会记到明天待办里",
         "score": {
           "T": 2
         }
       },
       {
         "key": "D",
-        "label": "补缺、对格、清单同步，一套动作直接开干",
+        "label": "会像忘了关煤气一样瞬间坐起来",
         "score": {
           "T": 3
         }
@@ -1200,30 +1237,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q35",
     "type": "main",
     "dimension": "Q",
-    "title": "评论区有人问“新手先买哪张”，你会？",
+    "category": "formal",
+    "title": "真实数据里有的贴纸评论数很高，但高质量评论比例不一定高。你会？",
     "options": [
       {
         "key": "A",
-        "label": "不回，让他自己逛",
+        "label": "数量多就够看了",
         "score": {}
       },
       {
         "key": "B",
-        "label": "回一句看预算和风格",
+        "label": "挑顺眼的看几条",
         "score": {
           "Q": 1
         }
       },
       {
         "key": "C",
-        "label": "会给一个不容易翻车的入门顺序",
+        "label": "更愿意找带图、带标签、带细节的评论",
         "score": {
           "Q": 2
         }
       },
       {
         "key": "D",
-        "label": "直接写一条清单，顺便把避坑也补上",
+        "label": "我自己就想成为那种别人会重点看的评论作者",
         "score": {
           "Q": 3
         }
@@ -1234,30 +1272,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q36",
     "type": "main",
     "dimension": "R",
-    "title": "一张贴纸从“想贴”变成“已贴”，哪个瞬间最让你满足？",
+    "category": "chaos",
+    "title": "如果某张贴纸特别适合你最近的精神状态，你会？",
     "options": [
       {
         "key": "A",
-        "label": "状态终于切过去了",
+        "label": "也就那样",
         "score": {}
       },
       {
         "key": "B",
-        "label": "页面完成度更高了",
+        "label": "觉得‘嗯，挺像我最近’",
         "score": {
           "R": 1
         }
       },
       {
         "key": "C",
-        "label": "那一页的气氛一下被点亮",
+        "label": "会专门找时间认真贴它",
         "score": {
           "R": 2
         }
       },
       {
         "key": "D",
-        "label": "像把自己当时那点心情正式贴进去了",
+        "label": "我会把那页当成本周情绪纪念碑",
         "score": {
           "R": 3
         }
@@ -1268,30 +1307,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q37",
     "type": "main",
     "dimension": "X",
-    "title": "你给一页拼贴选背景纸时，更像哪种人？",
+    "category": "random",
+    "title": "你上厕所时最像哪种贴纸玩家？",
     "options": [
       {
         "key": "A",
-        "label": "拿到什么用什么",
+        "label": "进去就出来，不想别的",
         "score": {}
       },
       {
         "key": "B",
-        "label": "挑个差不多顺眼的颜色",
+        "label": "会顺手想一下今天贴哪张",
         "score": {
           "X": 1
         }
       },
       {
         "key": "C",
-        "label": "会根据主角贴去配材质和层次",
+        "label": "可能已经在脑补版面顺序",
         "score": {
           "X": 2
         }
       },
       {
         "key": "D",
-        "label": "连光影、空气感和页面节奏都一起想了",
+        "label": "出来时连前景后景怎么叠都想好了",
         "score": {
           "X": 3
         }
@@ -1302,30 +1342,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q38",
     "type": "main",
     "dimension": "D",
-    "title": "朋友晒新入手的贴纸，你实际觉得一般，会怎么回？",
+    "category": "random",
+    "title": "你和朋友聊天时，最像哪种点评风格？",
     "options": [
       {
         "key": "A",
-        "label": "礼貌夸一下就算了",
+        "label": "主打和气生财",
         "score": {}
       },
       {
         "key": "B",
-        "label": "说一句“看个人风格吧”",
+        "label": "会轻微保留态度",
         "score": {
           "D": 1
         }
       },
       {
         "key": "C",
-        "label": "会提醒它更适合什么、不适合什么",
+        "label": "愿意讲逻辑，但尽量不伤人",
         "score": {
           "D": 2
         }
       },
       {
         "key": "D",
-        "label": "优点缺点一起讲，但保证句句都站得住",
+        "label": "我嘴可能损，但论据一般比感情多",
         "score": {
           "D": 3
         }
@@ -1336,30 +1377,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q39",
     "type": "main",
     "dimension": "G",
-    "title": "如果要做一页“没人会这么贴”的拼贴，你最可能从哪下手？",
+    "category": "formal",
+    "title": "真实贴纸里从 `MINI` 到长条大尺寸都有，你对尺寸的偏好更像？",
     "options": [
       {
         "key": "A",
-        "label": "我一般不这么折腾",
+        "label": "越常规越好",
         "score": {}
       },
       {
         "key": "B",
-        "label": "先换一个不常见的配色",
+        "label": "稍微特别一点也行",
         "score": {
           "G": 1
         }
       },
       {
         "key": "C",
-        "label": "从材质、题材或边角角色开始偏一点",
+        "label": "尺寸一怪，玩法就会更有意思",
         "score": {
           "G": 2
         }
       },
       {
         "key": "D",
-        "label": "直接拿最怪的核心贴定调，剩下都围着它转",
+        "label": "我甚至会因为尺寸离谱而高看它一眼",
         "score": {
           "G": 3
         }
@@ -1370,30 +1412,31 @@ export const mainQuestions: MainQuestion[] = [
     "id": "Q40",
     "type": "main",
     "dimension": "T",
-    "title": "月底盘仓时，哪种状态最容易让你坐不住？",
+    "category": "random",
+    "title": "月底你更可能盘点哪件事？",
     "options": [
       {
         "key": "A",
-        "label": "没有，月底就月底",
+        "label": "什么都不盘",
         "score": {}
       },
       {
         "key": "B",
-        "label": "还有几张未评，但问题不大",
+        "label": "大概看下花了多少",
         "score": {
           "T": 1
         }
       },
       {
         "key": "C",
-        "label": "未贴太多，会想赶紧消化库存",
+        "label": "会看哪些想贴还没动",
         "score": {
           "T": 2
         }
       },
       {
         "key": "D",
-        "label": "拥有、已贴、价格三栏对不上，我会浑身难受",
+        "label": "价格、数量、进度、遗憾，一样都不想放过",
         "score": {
           "T": 3
         }

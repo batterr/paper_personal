@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { getPersonaImageSrc, hiddenPersonaProfiles, personas } from "@/data/personas";
 import { dimensionLabels } from "@/data/questions";
 import { getMbtiComment } from "@/lib/scoring";
@@ -24,21 +24,91 @@ type StoredResult = {
   primaryTag: string;
 };
 
+type SharedResultPayload = {
+  scores: Record<string, number>;
+  percentages: Record<string, number>;
+  personaCode: string;
+  hiddenPersonaSlug: string | null;
+  shareTitle: string;
+  primaryTag: string;
+};
+
+function encodeSharePayload(payload: SharedResultPayload) {
+  const json = JSON.stringify(payload);
+  const bytes = new TextEncoder().encode(json);
+  let binary = "";
+  bytes.forEach((byte) => {
+    binary += String.fromCharCode(byte);
+  });
+  return btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
+}
+
+function decodeSharePayload(encoded: string | null): StoredResult | null {
+  if (!encoded) return null;
+
+  try {
+    const normalized = encoded.replace(/-/g, "+").replace(/_/g, "/");
+    const padded = normalized.padEnd(Math.ceil(normalized.length / 4) * 4, "=");
+    const binary = atob(padded);
+    const bytes = Uint8Array.from(binary, (char) => char.charCodeAt(0));
+    const payload = JSON.parse(new TextDecoder().decode(bytes)) as SharedResultPayload;
+    const persona = personas.find((item) => item.code === payload.personaCode);
+    if (!persona) {
+      return null;
+    }
+
+    const hiddenPersona = payload.hiddenPersonaSlug
+      ? hiddenPersonaProfiles.find((item) => item.slug === payload.hiddenPersonaSlug) ?? null
+      : null;
+
+    return {
+      scores: payload.scores,
+      percentages: payload.percentages,
+      persona,
+      hiddenPersona,
+      shareTitle: payload.shareTitle,
+      primaryTag: payload.primaryTag,
+    };
+  } catch {
+    return null;
+  }
+}
+
 export function ResultClient() {
   const [mbti, setMbti] = useState("");
+  const [shareState, setShareState] = useState<"idle" | "shared" | "copied" | "error">("idle");
+
+  const sharedResult = useMemo(() => {
+    if (typeof window === "undefined") return null;
+    return decodeSharePayload(new URLSearchParams(window.location.search).get("r"));
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && sharedResult) {
+      window.localStorage.setItem(storageKey, JSON.stringify(sharedResult));
+    }
+  }, [sharedResult]);
+
   const result = useMemo<StoredResult | null>(() => {
+    if (sharedResult) return sharedResult;
     if (typeof window === "undefined") return null;
     const raw = window.localStorage.getItem(storageKey);
     return raw ? (JSON.parse(raw) as StoredResult) : null;
-  }, []);
+  }, [sharedResult]);
 
   if (!result) {
     return (
       <div className="mx-auto flex min-h-screen max-w-3xl flex-col items-start justify-center px-4 py-16 sm:px-6">
         <h1 className="text-4xl font-black text-neutral-950">你还没开始丢人。</h1>
         <p className="mt-4 text-lg text-neutral-600">先测，再看结果。</p>
-        <Link href="/quiz" className="mt-8 rounded-full bg-neutral-950 px-6 py-3 font-semibold text-white">
-          去测一下
+        <Link
+          href="/quiz"
+          className="mt-8 inline-flex items-center gap-2 rounded-full bg-neutral-950 px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-black/20 transition hover:-translate-y-0.5"
+        >
+          <span className="text-white">去测一下</span>
+          <span aria-hidden="true" className="text-white">
+            →
+          </span>
         </Link>
       </div>
     );
@@ -49,6 +119,51 @@ export function ResultClient() {
   const subtitle = result.hiddenPersona?.oneLiner ?? result.persona.oneLiner;
   const mbtiComment = getMbtiComment(mbti, title);
   const imagePersona = result.persona;
+
+  async function handleShare() {
+    if (typeof window === "undefined") return;
+    const activeResult = result;
+    if (!activeResult) return;
+
+    const payload: SharedResultPayload = {
+      scores: activeResult.scores,
+      percentages: activeResult.percentages,
+      personaCode: activeResult.persona.code,
+      hiddenPersonaSlug: activeResult.hiddenPersona?.slug ?? null,
+      shareTitle: activeResult.shareTitle,
+      primaryTag: activeResult.primaryTag,
+    };
+
+    const shareUrl = new URL("/result", window.location.origin);
+    shareUrl.searchParams.set("r", encodeSharePayload(payload));
+
+    const shareData = {
+      title: activeResult.shareTitle,
+      text: `${title}｜${subtitle}`,
+      url: shareUrl.toString(),
+    };
+
+    try {
+      if (typeof navigator !== "undefined" && navigator.share) {
+        await navigator.share(shareData);
+        setShareState("shared");
+        return;
+      }
+
+      if (typeof navigator !== "undefined" && navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(`${shareData.text}\n${shareData.url}`);
+        setShareState("copied");
+        return;
+      }
+
+      setShareState("error");
+    } catch (error) {
+      if (error instanceof Error && error.name === "AbortError") {
+        return;
+      }
+      setShareState("error");
+    }
+  }
 
   return (
     <div className="noise-grid mx-auto flex min-h-screen w-full max-w-5xl flex-col px-4 py-6 sm:px-6">
@@ -168,13 +283,35 @@ export function ResultClient() {
         ) : null}
       </section>
 
-      <section className="mt-6 flex flex-wrap gap-3">
-        <Link href="/quiz" className="rounded-full bg-neutral-950 px-6 py-3 font-semibold text-white">
+      <section className="mt-6 flex flex-wrap items-center gap-3">
+        <button
+          type="button"
+          onClick={handleShare}
+          className="inline-flex items-center gap-2 rounded-full bg-neutral-950 px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-black/20 transition hover:-translate-y-0.5"
+        >
+          <span className="text-white">分享我的人格</span>
+          <span aria-hidden="true" className="text-white">
+            ↗
+          </span>
+        </button>
+        <Link
+          href="/quiz"
+          className="rounded-full border border-neutral-300 bg-white px-6 py-3 font-semibold text-neutral-900 transition hover:border-neutral-900"
+        >
           再测一次
         </Link>
         <Link href="/atlas" className="rounded-full border border-neutral-300 px-6 py-3 font-semibold text-neutral-900">
           逛人格图鉴
         </Link>
+        {shareState === "shared" ? (
+          <span className="text-sm font-medium text-neutral-500">已打开系统分享</span>
+        ) : null}
+        {shareState === "copied" ? (
+          <span className="text-sm font-medium text-neutral-500">分享文案和链接已复制</span>
+        ) : null}
+        {shareState === "error" ? (
+          <span className="text-sm font-medium text-red-500">当前环境不支持自动分享</span>
+        ) : null}
       </section>
     </div>
   );
