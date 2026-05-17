@@ -22,13 +22,13 @@ html {
 
 body {
   background:
-    radial-gradient(circle at top, rgba(255, 214, 165, 0.45), transparent 28%),
-    radial-gradient(circle at right, rgba(255, 145, 173, 0.28), transparent 24%),
-    radial-gradient(circle at left bottom, rgba(131, 168, 255, 0.22), transparent 28%),
-    linear-gradient(180deg, #fff8ef 0%, #f7f3ea 42%, #f6eedf 100%),
+    linear-gradient(120deg, rgba(255, 126, 162, 0.16) 0%, transparent 30%, rgba(99, 151, 255, 0.16) 66%, transparent 100%),
+    linear-gradient(180deg, #fff9f1 0%, #f7f3ea 46%, #f3ecd8 100%),
     var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  --cursor-x: 50vw;
+  --cursor-y: 24vh;
 }
 
 a {
@@ -68,8 +68,21 @@ button {
   border: 1px solid rgba(17, 17, 17, 0.1);
   border-radius: 999px;
   padding: 0.5rem 0.9rem;
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--sticker-badge-bg, rgba(255, 255, 255, 0.92));
+  color: var(--sticker-badge-fg, inherit);
   box-shadow: 0 10px 24px rgba(17, 17, 17, 0.08);
+}
+
+.result-primary-badge {
+  --sticker-badge-bg: #111111;
+  --sticker-badge-fg: #ffffff;
+  border-color: #111111;
+}
+
+.result-hidden-badge {
+  --sticker-badge-bg: #dff675;
+  --sticker-badge-fg: #111111;
+  border-color: rgba(17, 17, 17, 0.1);
 }
 
 .poster-frame {
@@ -86,6 +99,13 @@ button {
     radial-gradient(circle at 85% 18%, rgba(120, 169, 255, 0.24), transparent 22%),
     radial-gradient(circle at 60% 85%, rgba(255, 201, 92, 0.28), transparent 20%);
   pointer-events: none;
+}
+
+.home-hero::before {
+  background:
+    linear-gradient(118deg, rgba(255, 255, 255, 0.86) 0%, rgba(255, 255, 255, 0.34) 41%, rgba(47, 125, 72, 0.11) 100%),
+    repeating-linear-gradient(90deg, rgba(17, 17, 17, 0.035) 0 1px, transparent 1px 38px),
+    repeating-linear-gradient(0deg, rgba(17, 17, 17, 0.026) 0 1px, transparent 1px 38px);
 }
 
 .glow-panel {
@@ -118,4 +138,124 @@ button {
   font-family: var(--font-geist-mono), monospace;
   letter-spacing: 0.24em;
   text-transform: uppercase;
+}
+
+.immersive-cursor-light {
+  background:
+    radial-gradient(
+      440px circle at var(--cursor-x) var(--cursor-y),
+      rgba(255, 255, 255, 0.44),
+      rgba(255, 255, 255, 0.16) 34%,
+      transparent 68%
+    );
+  mix-blend-mode: soft-light;
+  opacity: 0.78;
+}
+
+.home-hero {
+  min-height: min(760px, calc(100vh - 6rem));
+}
+
+.home-hero-title {
+  text-wrap: balance;
+}
+
+.home-showcase {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.home-showcase-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  background:
+    linear-gradient(140deg, rgba(255, 255, 255, 0.94), rgba(246, 255, 230, 0.84)),
+    #ffffff;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 30px 80px rgba(17, 17, 17, 0.18);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  will-change: transform;
+}
+
+.home-showcase-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(135deg, rgba(17, 17, 17, 0.035) 0 1px, transparent 1px 18px),
+    linear-gradient(120deg, rgba(255, 122, 162, 0.18), transparent 42%, rgba(47, 125, 72, 0.16));
+  pointer-events: none;
+}
+
+.home-showcase-screen {
+  position: relative;
+  margin: 14px;
+  aspect-ratio: 13 / 9;
+  overflow: hidden;
+  border-radius: 22px;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  background: #fff;
+  isolation: isolate;
+}
+
+.home-showcase-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.18), transparent 22%, transparent 76%, rgba(255, 255, 255, 0.2)),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0) 0 7px, rgba(17, 17, 17, 0.018) 7px 8px);
+  pointer-events: none;
+}
+
+.home-showcase-caption {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 20px 20px;
+}
+
+.home-showcase-chip {
+  min-height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  background: rgba(255, 255, 255, 0.72);
+  padding: 0.55rem 0.75rem;
+  color: #3f3f46;
+  font-size: 0.86rem;
+  font-weight: 800;
+  box-shadow: 0 8px 20px rgba(17, 17, 17, 0.06);
+  transition: transform 160ms ease, background 160ms ease, color 160ms ease;
+}
+
+.home-showcase-chip:hover,
+.home-showcase-chip.is-active {
+  transform: translateY(-2px);
+  background: #111111;
+  color: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .home-hero {
+    min-height: auto;
+    border-radius: 32px;
+  }
+
+  .home-showcase-caption {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .home-showcase-chip {
+    font-size: 0.78rem;
+  }
+
+  .immersive-cursor-light {
+    display: none;
+  }
 }

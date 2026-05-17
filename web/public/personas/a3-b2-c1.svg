@@ -1,61 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1040" height="720" viewBox="0 0 520 360" role="img" aria-labelledby="title desc">
   <title id="title">体面废墟</title>
-  <desc id="desc">Distinct low-poly sticker persona scene for 体面废墟.</desc>
+  <desc id="desc">Low-poly sticker persona scene: 体面废墟.</desc>
   <rect width="520" height="360" rx="28" fill="#ffffff"/>
-  <rect x="18" y="18" width="484" height="324" rx="24" fill="#eaf4f2" opacity=".2"/>
-  <path d="M54 294 C136 333 386 335 466 292" fill="none" stroke="#e9eee6" stroke-width="18" stroke-linecap="round" opacity=".78"/>
-  <g transform="translate(100 126) scale(0.66)"><path d="M-26 -38 H26 V38 L15 30 L4 38 L-7 30 L-18 38 L-26 30 Z" fill="#fffdf4" stroke="#4d5668" stroke-width="4"/><path d="M-12 -14 H14 M-12 2 H16 M-12 18 H8" stroke="#98c8bd" stroke-width="5" stroke-linecap="round"/></g><path d="M55 268 L115 218 L150 268 Z M377 268 L434 210 L465 268 Z" fill="#909aad" opacity=".72"/><g transform="translate(410 114) scale(0.56)"><ellipse cx="-18" cy="9" rx="27" ry="17" fill="#cce4de"/><ellipse cx="9" cy="1" rx="31" ry="22" fill="#bfddd6"/><ellipse cx="34" cy="11" rx="21" ry="14" fill="#c6e1db"/><path d="M-18 37 L-25 54 M8 36 L1 55 M32 36 L24 53" stroke="#98c8bd" stroke-width="5" stroke-linecap="round"/></g>
+  <rect x="18" y="18" width="484" height="324" rx="24" fill="#eff7f5" opacity=".32"/>
+  <path d="M33 72 H492 M33 118 H492 M33 164 H492 M33 210 H492 M33 256 H492 M78 30 V332 M142 30 V332 M206 30 V332 M270 30 V332 M334 30 V332 M398 30 V332 M462 30 V332" stroke="#dadde4" stroke-width="1" opacity=".4"/>
+  <circle cx="83" cy="78" r="58" fill="#faf4e4" opacity=".22"/>
+  <circle cx="435" cy="281" r="62" fill="#dadde4" opacity=".18"/>
+  <rect x="18" y="18" width="484" height="324" rx="24" fill="#fbfaf5"/><path d="M80 282 L126 210 H171 L206 282 Z M323 282 L365 200 H417 L458 282 Z" fill="#a9b1bf"/><path d="M110 194 H188 M348 184 H434" stroke="#424b5c" stroke-width="12" stroke-linecap="round"/><path d="M221 119 H299 V282 H221 Z" fill="#d3eae4"/><path d="M232 144 H288 M232 178 H288 M232 212 H288" stroke="#fff" stroke-width="7" stroke-linecap="round"/><ellipse cx="260" cy="295" rx="180" ry="18" fill="#ced2db"/><g transform="translate(100 125) scale(0.48)" ><path d="M-33 -45 H33 V45 L21 35 L10 45 L0 35 L-11 45 L-22 35 L-33 45 Z" fill="#fffdf4" stroke="#495366" stroke-width="4" transform="rotate(-10)"/><path d="M-15 -18 H18 M-15 0 H20 M-15 18 H9" stroke="#9ed0c2" stroke-width="5" stroke-linecap="round" transform="rotate(-10)"/></g><g transform="translate(425 128) scale(0.44)" ><polygon points="-34,-12 0,-30 36,-12 0,8" fill="#8c96aa" /><polygon points="-34,-12 0,8 0,45 -34,25" fill="#65738d" /><polygon points="36,-12 0,8 0,45 36,25" fill="#4d576b" /><path d="M0 8 V45" stroke="#424b5c" stroke-width="3" opacity=".35"/><circle cx="-12" cy="-5" r="4" fill="#e8cf86" opacity=".7"/></g>
   
-    <g transform="translate(270 258) scale(0.92)">
-      <ellipse cx="0" cy="92" rx="78" ry="14" fill="#17201d" opacity=".14"/>
-      
-        <polygon points="-28,50 -52,91 -32,91 -10,53" fill="#4f596b" />
-        <polygon points="28,50 52,91 32,91 10,53" fill="#5a657a" />
-        <rect x="-58" y="88" width="36" height="9" rx="4" fill="#1e2221"/>
-        <rect x="23" y="88" width="36" height="9" rx="4" fill="#1e2221"/>
-      
-      
-        <path d="M-38 10 L-30 31 L-22 52" fill="none" stroke="#77839a" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="-30" cy="31" r="4" fill="#98c8bd" opacity=".58"/>
-        <circle cx="-22" cy="52" r="10" fill="#efd3bc"/>
-        <circle cx="-22" cy="52" r="5" fill="#dcc2ad" opacity=".35"/>
-      
-        <path d="M38 10 L30 31 L22 52" fill="none" stroke="#77839a" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="30" cy="31" r="4" fill="#98c8bd" opacity=".58"/>
-        <circle cx="22" cy="52" r="10" fill="#efd3bc"/>
-        <circle cx="22" cy="52" r="5" fill="#dcc2ad" opacity=".35"/>
-      
-      <polygon points="-47,-10 47,-10 63,62 -63,62" fill="#6b7891" />
-      <polygon points="-47,-10 0,7 -63,62" fill="#808ba0" opacity=".78"/>
-      <polygon points="47,-10 0,7 63,62" fill="#5e6a80" opacity=".72"/>
-      <polygon points="-17,-25 17,-25 15,-8 -15,-8" fill="#d8b298"/>
-      <g transform="translate(0 -74) scale(1.08)">
-        <polygon points="-54,-30 -17,-65 38,-58 66,-19 52,38 0,56 -50,34" fill="#efd3bc" />
-        <polygon points="-54,-30 -17,-65 -7,-4 -50,34" fill="#f6dfcd" opacity=".76"/>
-        <polygon points="-17,-65 38,-58 8,-2 -7,-4" fill="#f1d7c3" />
-        <polygon points="38,-58 66,-19 52,38 8,-2" fill="#d8b298" opacity=".58"/>
-        <polygon points="-50,34 -7,-4 0,56" fill="#e3c8b3" opacity=".62"/>
-        <polygon points="8,-2 52,38 0,56" fill="#f0d5bf" opacity=".62"/>
-        <polygon points="-58,-20 -17,-70 35,-65 64,-34 46,-16 -7,-35" fill="#24282b" />
-        <polygon points="-17,-70 35,-65 51,-35 0,-44" fill="#505355" />
-        <polygon points="46,-16 69,-8 64,-34 38,-25" fill="#1d2022" />
-        <polygon points="-58,-20 -70,6 -50,0 -40,-39" fill="#1d2022" />
-        
-    <path d="M-23 -15 L-7 -13 M9 -13 L25 -15" stroke="#2d2520" stroke-width="5" stroke-linecap="round"/>
-    <circle cx="-18" cy="-1" r="4" fill="#2d2520"/>
-    <circle cx="19" cy="-1" r="4" fill="#2d2520"/>
-    <polygon points="0,0 -8,14 8,13" fill="#dcc2ad" opacity=".75"/>
-    <path d="M-17 20 Q0 8 17 20" fill="none" stroke="#854e4a" stroke-width="5" stroke-linecap="round"/>
-    
-  
-      </g>
-    </g>
-  
-  
-    <g transform="translate(34 42)">
-      <rect x="0" y="-20" width="184" height="36" rx="18" fill="#ffffff" opacity=".9"/>
-      <text x="16" y="2" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="800" fill="#26302c">Face-Ruin</text>
+    <g transform="translate(33 42)">
+      <rect x="0" y="-20" width="205" height="36" rx="18" fill="#ffffff" opacity=".92"/>
+      <text x="16" y="2" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="900" fill="#26302c" >Face-Ruin</text>
     </g>
   
 </svg>

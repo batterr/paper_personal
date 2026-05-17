@@ -1,65 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1040" height="720" viewBox="0 0 520 360" role="img" aria-labelledby="title desc">
   <title id="title">囤纸牢</title>
-  <desc id="desc">Distinct low-poly sticker persona scene for 囤纸牢.</desc>
+  <desc id="desc">Low-poly sticker persona scene: 囤纸牢.</desc>
   <rect width="520" height="360" rx="28" fill="#ffffff"/>
-  <rect x="18" y="18" width="484" height="324" rx="24" fill="#e5e9e1" opacity=".2"/>
-  <path d="M54 294 C136 333 386 335 466 292" fill="none" stroke="#e9eee6" stroke-width="18" stroke-linecap="round" opacity=".78"/>
+  <rect x="18" y="18" width="484" height="324" rx="24" fill="#f6f1e8" opacity=".32"/>
+  <path d="M33 72 H492 M33 118 H492 M33 164 H492 M33 210 H492 M33 256 H492 M78 30 V332 M142 30 V332 M206 30 V332 M270 30 V332 M334 30 V332 M398 30 V332 M462 30 V332" stroke="#e0ded7" stroke-width="1" opacity=".4"/>
+  <circle cx="83" cy="78" r="58" fill="#e6f0e1" opacity=".22"/>
+  <circle cx="435" cy="281" r="62" fill="#e0ded7" opacity=".18"/>
   
-    <rect x="44" y="246" width="430" height="16" rx="8" fill="#d1d9ca" opacity=".7"/>
-    <rect x="58" y="174" width="150" height="12" rx="6" fill="#d1bd99" opacity=".75"/>
-    <rect x="326" y="170" width="132" height="12" rx="6" fill="#d1bd99" opacity=".75"/>
-  <g transform="translate(94 128) scale(0.72)"><polygon points="-30,-12 0,-27 32,-12 0,6" fill="#ccb68e" /><polygon points="-30,-12 0,6 0,42 -30,24" fill="#b89a62" /><polygon points="32,-12 0,6 0,42 32,24" fill="#846f47" /></g><g transform="translate(157 128) scale(0.62)"><polygon points="-30,-12 0,-27 32,-12 0,6" fill="#d4c2a0" /><polygon points="-30,-12 0,6 0,42 -30,24" fill="#c3aa7b" /><polygon points="32,-12 0,6 0,42 32,24" fill="#8c7a59" /></g><g transform="translate(391 124) scale(0.72)"><polygon points="-30,-12 0,-27 32,-12 0,6" fill="#ccb68e" /><polygon points="-30,-12 0,6 0,42 -30,24" fill="#b89a62" /><polygon points="32,-12 0,6 0,42 32,24" fill="#846f47" /></g><g transform="translate(108 252) scale(0.5)"><path d="M-26 -38 H26 V38 L15 30 L4 38 L-7 30 L-18 38 L-26 30 Z" fill="#fffdf4" stroke="#846f47" stroke-width="4"/><path d="M-12 -14 H14 M-12 2 H16 M-12 18 H8" stroke="#7b9367" stroke-width="5" stroke-linecap="round"/></g>
-  
-    <g transform="translate(340 256) scale(0.72)">
-      <ellipse cx="0" cy="92" rx="78" ry="14" fill="#17201d" opacity=".14"/>
-      
-        <polygon points="-28,50 -52,91 -32,91 -10,53" fill="#887249" />
-        <polygon points="28,50 52,91 32,91 10,53" fill="#9b8152" />
-        <rect x="-58" y="88" width="36" height="9" rx="4" fill="#1e2221"/>
-        <rect x="23" y="88" width="36" height="9" rx="4" fill="#1e2221"/>
-      
-      
-        <path d="M-38 10 L-30 31 L-22 52" fill="none" stroke="#bea26f" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="-30" cy="31" r="4" fill="#7b9367" opacity=".58"/>
-        <circle cx="-22" cy="52" r="10" fill="#efd3bc"/>
-        <circle cx="-22" cy="52" r="5" fill="#dcc2ad" opacity=".35"/>
-      
-        <path d="M38 10 L30 31 L22 52" fill="none" stroke="#bea26f" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="30" cy="31" r="4" fill="#7b9367" opacity=".58"/>
-        <circle cx="22" cy="52" r="10" fill="#efd3bc"/>
-        <circle cx="22" cy="52" r="5" fill="#dcc2ad" opacity=".35"/>
-      
-      <polygon points="-47,-10 47,-10 63,62 -63,62" fill="#b89a62" />
-      <polygon points="-47,-10 0,7 -63,62" fill="#c2a878" opacity=".78"/>
-      <polygon points="47,-10 0,7 63,62" fill="#a28856" opacity=".72"/>
-      <polygon points="-17,-25 17,-25 15,-8 -15,-8" fill="#d8b298"/>
-      <g transform="translate(0 -74) scale(1.05)">
-        <polygon points="-54,-30 -17,-65 38,-58 66,-19 52,38 0,56 -50,34" fill="#efd3bc" />
-        <polygon points="-54,-30 -17,-65 -7,-4 -50,34" fill="#f6dfcd" opacity=".76"/>
-        <polygon points="-17,-65 38,-58 8,-2 -7,-4" fill="#f1d7c3" />
-        <polygon points="38,-58 66,-19 52,38 8,-2" fill="#d8b298" opacity=".58"/>
-        <polygon points="-50,34 -7,-4 0,56" fill="#e3c8b3" opacity=".62"/>
-        <polygon points="8,-2 52,38 0,56" fill="#f0d5bf" opacity=".62"/>
-        <polygon points="-58,-20 -17,-70 35,-65 64,-34 46,-16 -7,-35" fill="#24282b" />
-        <polygon points="-17,-70 35,-65 51,-35 0,-44" fill="#505355" />
-        <polygon points="46,-16 69,-8 64,-34 38,-25" fill="#1d2022" />
-        <polygon points="-58,-20 -70,6 -50,0 -40,-39" fill="#1d2022" />
-        
-    <path d="M-24 -14 H-9 M9 -14 H24" stroke="#2d2520" stroke-width="4" stroke-linecap="round"/>
-    <circle cx="-18" cy="-1" r="4" fill="#2d2520"/>
-    <circle cx="19" cy="-1" r="4" fill="#2d2520"/>
-    <polygon points="0,0 -8,14 8,13" fill="#dcc2ad" opacity=".75"/>
-    <path d="M-17 17 H17" stroke="#854e4a" stroke-width="4" stroke-linecap="round"/>
-    
-  
+    <path d="M54 294 C136 333 386 335 466 292" fill="none" stroke="#e9eee6" stroke-width="18" stroke-linecap="round" opacity=".78"/>
+    <rect x="58" y="302" width="118" height="18" rx="11" fill="#e6d9bf" stroke="#b8ae99" stroke-width="3" transform="rotate(-2 117 311)"/>
+    <rect x="340" y="58" width="110" height="16" rx="11" fill="#b3af9e" stroke="#8f8c7e" stroke-width="3" transform="rotate(1 395 66)"/>
+  <rect x="112" y="78" width="296" height="206" rx="20" fill="#fffaf0" stroke="#514c39" stroke-width="7"/><path d="M160 82 V282 M210 82 V282 M260 82 V282 M310 82 V282 M360 82 V282" stroke="#70694f" stroke-width="10"/><path d="M111 145 H409 M111 217 H409" stroke="#99937d" stroke-width="7"/><g opacity=".92"><g transform="translate(94 257) scale(0.52)" ><polygon points="-34,-12 0,-30 36,-12 0,8" fill="#9d9882" /><polygon points="-34,-12 0,8 0,45 -34,25" fill="#7c7558" /><polygon points="36,-12 0,8 0,45 36,25" fill="#5e5943" /><path d="M0 8 V45" stroke="#514c39" stroke-width="3" opacity=".35"/><circle cx="-12" cy="-5" r="4" fill="#c7a96d" opacity=".7"/></g><g transform="translate(430 109) scale(0.5)" ><polygon points="-34,-12 0,-30 36,-12 0,8" fill="#b0ad9b" /><polygon points="-34,-12 0,8 0,45 -34,25" fill="#969179" /><polygon points="36,-12 0,8 0,45 36,25" fill="#726e5c" /><path d="M0 8 V45" stroke="#625e4f" stroke-width="3" opacity=".35"/><circle cx="-12" cy="-5" r="4" fill="#8dbb75" opacity=".7"/></g></g><g transform="translate(260 244) scale(0.58)" >
+      <ellipse cx="0" cy="87" rx="72" ry="13" fill="#17201d" opacity=".16"/>
+      <polygon points="-39,8 39,8 57,70 -57,70" fill="#7c7558" />
+      <polygon points="-39,8 0,24 -57,70" fill="#908a71" opacity=".8"/>
+      <polygon points="39,8 0,24 57,70" fill="#6b654c" opacity=".76"/>
+      <path d="M-40 19 L-82 44 M40 18 L82 44" stroke="#868065" stroke-width="17" stroke-linecap="round"/>
+      <circle cx="-86" cy="46" r="10" fill="#efd0b9"/><circle cx="86" cy="46" r="10" fill="#efd0b9"/>
+      <g transform="translate(0 -64)">
+        <polygon points="-53,-30 -14,-61 39,-55 63,-16 51,38 0,56 -48,33" fill="#efd0b9" />
+        <polygon points="-53,-30 -14,-61 -8,0 -48,33" fill="#f1d5c0" opacity=".8"/>
+        <polygon points="39,-55 63,-16 51,38 7,-1" fill="#d2b7a3" opacity=".62"/>
+        <polygon points="-65,-20 -34,-73 30,-73 67,-18 54,46 -54,44" fill="#5d5842" />
+        <path d="M-26 -14 L-7 -18 M7 -18 L27 -14" stroke="#2d2520" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="-18" cy="0" r="4.5" fill="#2d2520"/><circle cx="19" cy="0" r="4.5" fill="#2d2520"/>
+        <polygon points="0,0 -8,14 8,13" fill="#dcbfaa" opacity=".75"/>
+        <path d="M-18 23 Q0 9 18 23" fill="none" stroke="#854e4a" stroke-width="5" stroke-linecap="round"/>
       </g>
+      <circle cx="-41" cy="9" r="5" fill="#c7a96d" opacity=".72"/><circle cx="40" cy="9" r="5" fill="#8dbb75" opacity=".72"/>
     </g>
   
-  
-    <g transform="translate(34 42)">
-      <rect x="0" y="-20" width="184" height="36" rx="18" fill="#ffffff" opacity=".9"/>
-      <text x="16" y="2" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="800" fill="#26302c">Tun-Paper-Lao</text>
+    <g transform="translate(33 42)">
+      <rect x="0" y="-20" width="205" height="36" rx="18" fill="#ffffff" opacity=".92"/>
+      <text x="16" y="2" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="900" fill="#26302c" >Tun-Paper-Lao</text>
     </g>
   
 </svg>

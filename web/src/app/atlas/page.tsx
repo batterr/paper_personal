@@ -5,7 +5,7 @@ import { getPersonaImageSrc, hiddenPersonaProfiles, personas } from "@/data/pers
 
 export const metadata: Metadata = {
   title: "人格图鉴 | 贴纸人格实验室",
-  description: "27 型贴纸人格图鉴，先逛外号和 Chinlish，再决定要不要亲自去丢人。",
+  description: "浏览 27 型贴纸人格、对应的中式英语外号，以及它们在造景、点评和收纳里的典型表现。",
 };
 
 export default function AtlasPage() {
@@ -18,9 +18,10 @@ export default function AtlasPage() {
 
       <section className="mt-8 rounded-[36px] border border-neutral-200 bg-white p-6 shadow-sm sm:p-10">
         <div className="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">全部人格图鉴</div>
-        <h1 className="mt-4 text-4xl font-black text-neutral-950 sm:text-6xl">27 型常规人格</h1>
+        <h1 className="mt-4 text-4xl font-black text-neutral-950 sm:text-6xl">27 型贴纸人格</h1>
         <p className="mt-4 max-w-3xl text-lg leading-8 text-neutral-700">
-          名字先要像外号，再要像一张转发给朋友就能立刻 get 的标签。每个结果都配了一个中式英语谐音，适合贴纸点评、收纳发作和造景小剧场。
+          每种人格都对应一种贴纸使用习惯：你怎么挑图、怎么评价、怎么收纳、又会把一页造景推到什么程度。
+          每个结果都配有中式英语谐音，方便保存和分享。
         </p>
       </section>
 
@@ -50,7 +51,7 @@ export default function AtlasPage() {
 
       {hiddenPersonaProfiles.length > 0 ? (
         <section className="mt-10 rounded-[36px] border border-dashed border-neutral-300 bg-[#fffdf8] p-6 sm:p-10">
-          <div className="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">隐藏人格</div>
+          <div className="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">隐藏人格类型</div>
           <div className="mt-4 grid gap-4 md:grid-cols-3">
             {hiddenPersonaProfiles.map((persona) => (
               <div key={persona.slug} className="rounded-[24px] border border-neutral-200 bg-white p-5 shadow-sm">

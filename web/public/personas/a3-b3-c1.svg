@@ -1,61 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1040" height="720" viewBox="0 0 520 360" role="img" aria-labelledby="title desc">
   <title id="title">独角戏精</title>
-  <desc id="desc">Distinct low-poly sticker persona scene for 独角戏精.</desc>
+  <desc id="desc">Low-poly sticker persona scene: 独角戏精.</desc>
   <rect width="520" height="360" rx="28" fill="#ffffff"/>
-  <rect x="18" y="18" width="484" height="324" rx="24" fill="#fbefe0" opacity=".2"/>
-  <path d="M54 294 C136 333 386 335 466 292" fill="none" stroke="#e9eee6" stroke-width="18" stroke-linecap="round" opacity=".78"/>
-  <polygon points="96,72 198,72 255,342 36,342" fill="#f5dab9" opacity=".58"/><polygon points="324,72 426,72 484,342 265,342" fill="#f5dab9" opacity=".45"/><rect x="95" y="64" width="104" height="16" rx="6" fill="#4c3c59"/><rect x="323" y="64" width="104" height="16" rx="6" fill="#4c3c59"/>
-  
-    <g transform="translate(260 246) scale(1.06)">
-      <ellipse cx="0" cy="92" rx="78" ry="14" fill="#17201d" opacity=".14"/>
-      
-        <polygon points="-28,50 -52,91 -32,91 -10,53" fill="#503f5e" />
-        <polygon points="28,50 52,91 32,91 10,53" fill="#5b476b" />
-        <rect x="-58" y="88" width="36" height="9" rx="4" fill="#1e2221"/>
-        <rect x="23" y="88" width="36" height="9" rx="4" fill="#1e2221"/>
-      
-      
-        <path d="M-38 8 L-56.5 -25 L-75 -58" fill="none" stroke="#786389" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="-56.5" cy="-25" r="4" fill="#e9ad63" opacity=".58"/>
-        <circle cx="-75" cy="-58" r="10" fill="#efd3bc"/>
-        <circle cx="-75" cy="-58" r="5" fill="#dcc2ad" opacity=".35"/>
-      
-        <path d="M38 8 L56.5 -25 L75 -58" fill="none" stroke="#786389" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="56.5" cy="-25" r="4" fill="#e9ad63" opacity=".58"/>
-        <circle cx="75" cy="-58" r="10" fill="#efd3bc"/>
-        <circle cx="75" cy="-58" r="5" fill="#dcc2ad" opacity=".35"/>
-      
-      <polygon points="-47,-10 47,-10 63,62 -63,62" fill="#6c557f" />
-      <polygon points="-47,-10 0,7 -63,62" fill="#816d91" opacity=".78"/>
-      <polygon points="47,-10 0,7 63,62" fill="#5f4b70" opacity=".72"/>
-      <polygon points="-17,-25 17,-25 15,-8 -15,-8" fill="#d8b298"/>
-      <g transform="translate(0 -74) scale(1.18)">
-        <polygon points="-54,-30 -17,-65 38,-58 66,-19 52,38 0,56 -50,34" fill="#efd3bc" />
-        <polygon points="-54,-30 -17,-65 -7,-4 -50,34" fill="#f6dfcd" opacity=".76"/>
-        <polygon points="-17,-65 38,-58 8,-2 -7,-4" fill="#f1d7c3" />
-        <polygon points="38,-58 66,-19 52,38 8,-2" fill="#d8b298" opacity=".58"/>
-        <polygon points="-50,34 -7,-4 0,56" fill="#e3c8b3" opacity=".62"/>
-        <polygon points="8,-2 52,38 0,56" fill="#f0d5bf" opacity=".62"/>
-        <polygon points="-58,-20 -17,-70 35,-65 64,-34 46,-16 -7,-35" fill="#24282b" />
-        <polygon points="-17,-70 35,-65 51,-35 0,-44" fill="#505355" />
-        <polygon points="46,-16 69,-8 64,-34 38,-25" fill="#1d2022" />
-        <polygon points="-58,-20 -70,6 -50,0 -40,-39" fill="#1d2022" />
-        
-    <path d="M-28 -10 L-8 -20 M8 -20 L28 -10" stroke="#2d2520" stroke-width="5" stroke-linecap="round"/>
-    <circle cx="-18" cy="-1" r="4" fill="#2d2520"/>
-    <circle cx="19" cy="-1" r="4" fill="#2d2520"/>
-    <polygon points="0,0 -8,14 8,13" fill="#dcc2ad" opacity=".75"/>
-    <path d="M-18 24 Q0 7 18 24" fill="none" stroke="#854e4a" stroke-width="5" stroke-linecap="round"/>
-    <path d="M31 1 C41 14 39 27 28 29 C20 24 23 11 31 1 Z" fill="#f2cea1"/>
-  
+  <rect x="18" y="18" width="484" height="324" rx="24" fill="#fbf2e6" opacity=".32"/>
+  <path d="M33 72 H492 M33 118 H492 M33 164 H492 M33 210 H492 M33 256 H492 M78 30 V332 M142 30 V332 M206 30 V332 M270 30 V332 M334 30 V332 M398 30 V332 M462 30 V332" stroke="#dcd6e0" stroke-width="1" opacity=".4"/>
+  <circle cx="83" cy="78" r="58" fill="#fae2eb" opacity=".22"/>
+  <circle cx="435" cy="281" r="62" fill="#dcd6e0" opacity=".18"/>
+  <rect x="18" y="18" width="484" height="324" rx="24" fill="#241927" opacity=".94"/><path d="M70 300 C143 253 377 253 450 300" fill="#8f7e9e"/><path d="M184 112 C211 75 250 92 260 128 C247 213 216 252 174 232 C152 182 155 142 184 112 Z" fill="#fff4db"/><path d="M336 112 C309 75 270 92 260 128 C273 213 304 252 346 232 C368 182 365 142 336 112 Z" fill="#efaac3"/><path d="M190 154 Q207 143 224 156 M296 156 Q313 143 330 154" stroke="#463753" stroke-width="7" stroke-linecap="round"/><path d="M204 207 Q233 230 260 207 M316 207 Q287 230 260 207" fill="none" stroke="#e9ad63" stroke-width="7" stroke-linecap="round"/><g transform="translate(260 275) scale(0.42)" >
+      <ellipse cx="0" cy="87" rx="72" ry="13" fill="#17201d" opacity=".16"/>
+      <polygon points="-39,8 39,8 57,70 -57,70" fill="#6c557f" />
+      <polygon points="-39,8 0,24 -57,70" fill="#826f92" opacity=".8"/>
+      <polygon points="39,8 0,24 57,70" fill="#5d496d" opacity=".76"/>
+      <path d="M-40 19 L-82 44 M40 18 L82 44" stroke="#786389" stroke-width="17" stroke-linecap="round"/>
+      <circle cx="-86" cy="46" r="10" fill="#efd0b9"/><circle cx="86" cy="46" r="10" fill="#efd0b9"/>
+      <g transform="translate(0 -64)">
+        <polygon points="-53,-30 -14,-61 39,-55 63,-16 51,38 0,56 -48,33" fill="#efd0b9" />
+        <polygon points="-53,-30 -14,-61 -8,0 -48,33" fill="#f1d5c0" opacity=".8"/>
+        <polygon points="39,-55 63,-16 51,38 7,-1" fill="#d2b7a3" opacity=".62"/>
+        <polygon points="-60,-25 -39,-72 -12,-45 11,-75 31,-43 63,-34 45,-6 -11,-30" fill="#1f2428" />
+        <path d="M-26 -14 L-7 -18 M7 -18 L27 -14" stroke="#2d2520" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="-18" cy="0" r="4.5" fill="#2d2520"/><circle cx="19" cy="0" r="4.5" fill="#2d2520"/>
+        <polygon points="0,0 -8,14 8,13" fill="#dcbfaa" opacity=".75"/>
+        <path d="M-18 23 Q0 9 18 23" fill="none" stroke="#854e4a" stroke-width="5" stroke-linecap="round"/>
       </g>
+      <circle cx="-41" cy="9" r="5" fill="#e9ad63" opacity=".72"/><circle cx="40" cy="9" r="5" fill="#e67aa2" opacity=".72"/>
     </g>
   
-  
-    <g transform="translate(34 42)">
-      <rect x="0" y="-20" width="184" height="36" rx="18" fill="#ffffff" opacity=".9"/>
-      <text x="16" y="2" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="800" fill="#26302c">Solo-Drama-Jing</text>
+    <g transform="translate(33 42)">
+      <rect x="0" y="-20" width="205" height="36" rx="18" fill="#ffffff" opacity=".92"/>
+      <text x="16" y="2" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="900" fill="#26302c" >Solo-Drama-Jing</text>
     </g>
   
 </svg>

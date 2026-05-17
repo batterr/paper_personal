@@ -1,56 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1040" height="720" viewBox="0 0 520 360" role="img" aria-labelledby="title desc">
   <title id="title">怪话漏勺</title>
-  <desc id="desc">Distinct low-poly sticker persona scene for 怪话漏勺.</desc>
+  <desc id="desc">Low-poly sticker persona scene: 怪话漏勺.</desc>
   <rect width="520" height="360" rx="28" fill="#ffffff"/>
-  <rect x="18" y="18" width="484" height="324" rx="24" fill="#e1f2eb" opacity=".2"/>
-  <path d="M54 294 C136 333 386 335 466 292" fill="none" stroke="#e9eee6" stroke-width="18" stroke-linecap="round" opacity=".78"/>
-  <g transform="translate(112 142) scale(0.78)"><path d="M-42 -24 C-14 -55 15 15 43 -22" fill="none" stroke="#68bf9b" stroke-width="7" stroke-linecap="round"/><circle cx="-42" cy="-24" r="8" fill="#68bf9b"/><circle cx="43" cy="-22" r="8" fill="#68bf9b"/></g><g transform="translate(408 128) scale(0.62)"><path d="M-26 -38 H26 V38 L15 30 L4 38 L-7 30 L-18 38 L-26 30 Z" fill="#fffdf4" stroke="#474261" stroke-width="4"/><path d="M-12 -14 H14 M-12 2 H16 M-12 18 H8" stroke="#68bf9b" stroke-width="5" stroke-linecap="round"/></g><g transform="translate(116 255) scale(0.56)"><rect x="-42" y="-33" width="84" height="66" rx="6" fill="#fff" stroke="#474261" stroke-width="4"/><circle cx="20" cy="-9" r="9" fill="#68bf9b"/><path d="M-32 22 L-12 -2 L4 13 L18 1 L34 22 Z" fill="#9dd5be"/></g>
+  <rect x="18" y="18" width="484" height="324" rx="24" fill="#eaf8f1" opacity=".32"/>
+  <path d="M33 72 H492 M33 118 H492 M33 164 H492 M33 210 H492 M33 256 H492 M78 30 V332 M142 30 V332 M206 30 V332 M270 30 V332 M334 30 V332 M398 30 V332 M462 30 V332" stroke="#dad7e3" stroke-width="1" opacity=".4"/>
+  <circle cx="83" cy="78" r="58" fill="#fdf4de" opacity=".22"/>
+  <circle cx="435" cy="281" r="62" fill="#dad7e3" opacity=".18"/>
   
-    <g transform="translate(260 260) scale(1.18)">
-      <ellipse cx="0" cy="92" rx="78" ry="14" fill="#17201d" opacity=".14"/>
-      
-      
-        <path d="M-38 8 L-60.5 4 L-83 0" fill="none" stroke="#6f6991" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="-60.5" cy="4" r="4" fill="#68bf9b" opacity=".58"/>
-        <circle cx="-83" cy="0" r="10" fill="#efd3bc"/>
-        <circle cx="-83" cy="0" r="5" fill="#dcc2ad" opacity=".35"/>
-      
-        <path d="M38 8 L50 21.5 L62 35" fill="none" stroke="#6f6991" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="50" cy="21.5" r="4" fill="#68bf9b" opacity=".58"/>
-        <circle cx="62" cy="35" r="10" fill="#efd3bc"/>
-        <circle cx="62" cy="35" r="5" fill="#dcc2ad" opacity=".35"/>
-      
-      <polygon points="-47,-10 47,-10 63,62 -63,62" fill="#635c87" />
-      <polygon points="-47,-10 0,7 -63,62" fill="#797398" opacity=".78"/>
-      <polygon points="47,-10 0,7 63,62" fill="#575177" opacity=".72"/>
-      <polygon points="-17,-25 17,-25 15,-8 -15,-8" fill="#d8b298"/>
-      <g transform="translate(0 -74) scale(1.2)">
-        <polygon points="-54,-30 -17,-65 38,-58 66,-19 52,38 0,56 -50,34" fill="#efd3bc" />
-        <polygon points="-54,-30 -17,-65 -7,-4 -50,34" fill="#f6dfcd" opacity=".76"/>
-        <polygon points="-17,-65 38,-58 8,-2 -7,-4" fill="#f1d7c3" />
-        <polygon points="38,-58 66,-19 52,38 8,-2" fill="#d8b298" opacity=".58"/>
-        <polygon points="-50,34 -7,-4 0,56" fill="#e3c8b3" opacity=".62"/>
-        <polygon points="8,-2 52,38 0,56" fill="#f0d5bf" opacity=".62"/>
-        <polygon points="-58,-20 -17,-70 35,-65 64,-34 46,-16 -7,-35" fill="#24282b" />
-        <polygon points="-17,-70 35,-65 51,-35 0,-44" fill="#505355" />
-        <polygon points="46,-16 69,-8 64,-34 38,-25" fill="#1d2022" />
-        <polygon points="-58,-20 -70,6 -50,0 -40,-39" fill="#1d2022" />
-        
-    <path d="M-27 -15 L-8 -18 M8 -18 L27 -15" stroke="#2d2520" stroke-width="5" stroke-linecap="round"/>
-    <circle cx="-18" cy="-1" r="4" fill="#2d2520"/>
-    <circle cx="19" cy="-1" r="4" fill="#2d2520"/>
-    <polygon points="0,0 -8,14 8,13" fill="#dcc2ad" opacity=".75"/>
-    <path d="M-18 15 Q0 25 22 12" fill="none" stroke="#854e4a" stroke-width="5" stroke-linecap="round"/>
-    
-  
+    <path d="M54 294 C136 333 386 335 466 292" fill="none" stroke="#e9eee6" stroke-width="18" stroke-linecap="round" opacity=".78"/>
+    <rect x="58" y="302" width="118" height="18" rx="11" fill="#c5edd7" stroke="#9ebeac" stroke-width="3" transform="rotate(-2 117 311)"/>
+    <rect x="340" y="58" width="110" height="16" rx="11" fill="#a69fbc" stroke="#857f96" stroke-width="3" transform="rotate(1 395 66)"/>
+  <g transform="translate(245 175) scale(1)" ><ellipse cx="-34" cy="-22" rx="70" ry="42" fill="#93ddb5" transform="rotate(-21)"/><path d="M12 4 L158 90" stroke="#6fc195" stroke-width="24" stroke-linecap="round"/><circle cx="-50" cy="-25" r="10" fill="#fff"/><circle cx="-15" cy="-32" r="8" fill="#fff"/></g><path d="M72 111 C105 72 145 86 151 129" fill="none" stroke="#f5cf6b" stroke-width="7" stroke-linecap="round"/><path d="M360 98 C398 58 446 83 448 133" fill="none" stroke="#f5cf6b" stroke-width="7" stroke-linecap="round"/><g transform="translate(112 251) scale(0.5)" ><path d="M-33 -45 H33 V45 L21 35 L10 45 L0 35 L-11 45 L-22 35 L-33 45 Z" fill="#fffdf4" stroke="#494165" stroke-width="4" transform="rotate(9)"/><path d="M-15 -18 H18 M-15 0 H20 M-15 18 H9" stroke="#7bd6a5" stroke-width="5" stroke-linecap="round" transform="rotate(9)"/></g><g transform="translate(369 247) scale(0.54)" >
+      <ellipse cx="0" cy="87" rx="72" ry="13" fill="#17201d" opacity=".16"/>
+      <polygon points="-39,8 39,8 57,70 -57,70" fill="#665a8c" />
+      <polygon points="-39,8 0,24 -57,70" fill="#7d739d" opacity=".8"/>
+      <polygon points="39,8 0,24 57,70" fill="#584d78" opacity=".76"/>
+      <path d="M-40 19 L-82 44 M40 18 L82 44" stroke="#726795" stroke-width="17" stroke-linecap="round"/>
+      <circle cx="-86" cy="46" r="10" fill="#efd0b9"/><circle cx="86" cy="46" r="10" fill="#efd0b9"/>
+      <g transform="translate(0 -64)">
+        <polygon points="-53,-30 -14,-61 39,-55 63,-16 51,38 0,56 -48,33" fill="#efd0b9" />
+        <polygon points="-53,-30 -14,-61 -8,0 -48,33" fill="#f1d5c0" opacity=".8"/>
+        <polygon points="39,-55 63,-16 51,38 7,-1" fill="#d2b7a3" opacity=".62"/>
+        <polygon points="-65,-20 -34,-73 30,-73 67,-18 54,46 -54,44" fill="#4d4469" />
+        <path d="M-26 -14 L-7 -18 M7 -18 L27 -14" stroke="#2d2520" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="-18" cy="0" r="4.5" fill="#2d2520"/><circle cx="19" cy="0" r="4.5" fill="#2d2520"/>
+        <polygon points="0,0 -8,14 8,13" fill="#dcbfaa" opacity=".75"/>
+        <path d="M-18 23 Q0 9 18 23" fill="none" stroke="#854e4a" stroke-width="5" stroke-linecap="round"/>
       </g>
+      <circle cx="-41" cy="9" r="5" fill="#7bd6a5" opacity=".72"/><circle cx="40" cy="9" r="5" fill="#f5cf6b" opacity=".72"/>
     </g>
   
-  
-    <g transform="translate(34 42)">
-      <rect x="0" y="-20" width="184" height="36" rx="18" fill="#ffffff" opacity=".9"/>
-      <text x="16" y="2" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="800" fill="#26302c">Guai-Talk-Spoon</text>
+    <g transform="translate(33 42)">
+      <rect x="0" y="-20" width="205" height="36" rx="18" fill="#ffffff" opacity=".92"/>
+      <text x="16" y="2" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="900" fill="#26302c" >Guai-Talk-Spoon</text>
     </g>
   
 </svg>

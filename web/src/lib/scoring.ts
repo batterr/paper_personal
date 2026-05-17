@@ -152,14 +152,14 @@ export function getMbtiComment(mbti: string, personaName: string): string {
   if (!mbti) return "";
 
   const traits: string[] = [];
-  if (mbti.startsWith("E")) traits.push("你会把这份节目效果外放给别人看");
-  if (mbti.startsWith("I")) traits.push("你会在安静状态下偷偷把戏做满");
-  if (mbti.includes("N")) traits.push("你会更偏爱脑洞和怪味延伸");
-  if (mbti.includes("S")) traits.push("你会把离谱感落到具体使用场景里");
-  if (mbti.includes("F")) traits.push("情绪投射会比嘴硬更明显");
-  if (mbti.includes("T")) traits.push("你会把损和判断包装得更利落");
-  if (mbti.endsWith("J")) traits.push("连发疯都带一点编排和秩序");
-  if (mbti.endsWith("P")) traits.push("你的节目效果更随缘，也更突然");
+  if (mbti.startsWith("E")) traits.push("你更容易把贴纸体验分享给别人看");
+  if (mbti.startsWith("I")) traits.push("你更习惯在安静状态里慢慢完成自己的贴纸页");
+  if (mbti.includes("N")) traits.push("你会更偏爱脑洞和氛围延伸");
+  if (mbti.includes("S")) traits.push("你会把喜好落到具体使用场景里");
+  if (mbti.includes("F")) traits.push("情绪投射会更明显");
+  if (mbti.includes("T")) traits.push("你会把判断表达得更利落");
+  if (mbti.endsWith("J")) traits.push("你的贴纸过程更有编排和秩序");
+  if (mbti.endsWith("P")) traits.push("你的贴纸灵感更随性，也更突然");
 
   return `${mbti} × ${personaName}：${traits.slice(0, 2).join('，')}。`;
 }

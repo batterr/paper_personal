@@ -1,61 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1040" height="720" viewBox="0 0 520 360" role="img" aria-labelledby="title desc">
   <title id="title">带歪总监</title>
-  <desc id="desc">Distinct low-poly sticker persona scene for 带歪总监.</desc>
+  <desc id="desc">Low-poly sticker persona scene: 带歪总监.</desc>
   <rect width="520" height="360" rx="28" fill="#ffffff"/>
-  <rect x="18" y="18" width="484" height="324" rx="24" fill="#e6f2de" opacity=".2"/>
-  <path d="M54 294 C136 333 386 335 466 292" fill="none" stroke="#e9eee6" stroke-width="18" stroke-linecap="round" opacity=".78"/>
-  <g transform="translate(106 123) scale(0.82)"><rect x="-45" y="-35" width="90" height="70" rx="8" fill="#fffdf5" stroke="#38514d" stroke-width="4"/><path d="M-28 18 L-8 2 L8 10 L30 -18" fill="none" stroke="#83bd5c" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(405 238) scale(0.68)"><polygon points="-42,-8 6,-28 6,28 -42,8" fill="#83bd5c" /><rect x="-55" y="-11" width="17" height="22" rx="5" fill="#38514d"/><path d="M15 -24 Q43 -12 48 0 Q43 12 15 24" fill="none" stroke="#83bd5c" stroke-width="6" stroke-linecap="round"/></g><path d="M350 83 C390 58 431 58 462 87" fill="none" stroke="#83bd5c" stroke-width="8" stroke-linecap="round"/>
+  <rect x="18" y="18" width="484" height="324" rx="24" fill="#eef7e6" opacity=".32"/>
+  <path d="M33 72 H492 M33 118 H492 M33 164 H492 M33 210 H492 M33 256 H492 M78 30 V332 M142 30 V332 M206 30 V332 M270 30 V332 M334 30 V332 M398 30 V332 M462 30 V332" stroke="#d2dbdb" stroke-width="1" opacity=".4"/>
+  <circle cx="83" cy="78" r="58" fill="#ffe5dc" opacity=".22"/>
+  <circle cx="435" cy="281" r="62" fill="#d2dbdb" opacity=".18"/>
   
-    <g transform="translate(250 247) scale(0.94)">
-      <ellipse cx="0" cy="92" rx="78" ry="14" fill="#17201d" opacity=".14"/>
-      
-        <polygon points="-28,50 -52,91 -32,91 -10,53" fill="#3a534f" />
-        <polygon points="28,50 52,91 32,91 10,53" fill="#425e5a" />
-        <rect x="-58" y="88" width="36" height="9" rx="4" fill="#1e2221"/>
-        <rect x="23" y="88" width="36" height="9" rx="4" fill="#1e2221"/>
-      
-      
-        <path d="M-38 8 L-64.5 0.5 L-91 -7" fill="none" stroke="#5c7b77" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="-64.5" cy="0.5" r="4" fill="#83bd5c" opacity=".58"/>
-        <circle cx="-91" cy="-7" r="10" fill="#efd3bc"/>
-        <circle cx="-91" cy="-7" r="5" fill="#dcc2ad" opacity=".35"/>
-      
-        <path d="M38 8 L51.5 21 L65 34" fill="none" stroke="#5c7b77" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="51.5" cy="21" r="4" fill="#83bd5c" opacity=".58"/>
-        <circle cx="65" cy="34" r="10" fill="#efd3bc"/>
-        <circle cx="65" cy="34" r="5" fill="#dcc2ad" opacity=".35"/>
-      
-      <polygon points="-47,-10 47,-10 63,62 -63,62" fill="#4e706b" />
-      <polygon points="-47,-10 0,7 -63,62" fill="#678480" opacity=".78"/>
-      <polygon points="47,-10 0,7 63,62" fill="#45635e" opacity=".72"/>
-      <polygon points="-17,-25 17,-25 15,-8 -15,-8" fill="#d8b298"/>
-      <g transform="translate(0 -74) scale(1.15)">
-        <polygon points="-54,-30 -17,-65 38,-58 66,-19 52,38 0,56 -50,34" fill="#efd3bc" />
-        <polygon points="-54,-30 -17,-65 -7,-4 -50,34" fill="#f6dfcd" opacity=".76"/>
-        <polygon points="-17,-65 38,-58 8,-2 -7,-4" fill="#f1d7c3" />
-        <polygon points="38,-58 66,-19 52,38 8,-2" fill="#d8b298" opacity=".58"/>
-        <polygon points="-50,34 -7,-4 0,56" fill="#e3c8b3" opacity=".62"/>
-        <polygon points="8,-2 52,38 0,56" fill="#f0d5bf" opacity=".62"/>
-        <polygon points="-58,-20 -17,-70 35,-65 64,-34 46,-16 -7,-35" fill="#24282b" />
-        <polygon points="-17,-70 35,-65 51,-35 0,-44" fill="#505355" />
-        <polygon points="46,-16 69,-8 64,-34 38,-25" fill="#1d2022" />
-        <polygon points="-58,-20 -70,6 -50,0 -40,-39" fill="#1d2022" />
-        
-    <path d="M-27 -15 L-8 -18 M8 -18 L27 -15" stroke="#2d2520" stroke-width="5" stroke-linecap="round"/>
-    <circle cx="-18" cy="-1" r="4" fill="#2d2520"/>
-    <circle cx="19" cy="-1" r="4" fill="#2d2520"/>
-    <polygon points="0,0 -8,14 8,13" fill="#dcc2ad" opacity=".75"/>
-    <path d="M-18 15 Q0 25 22 12" fill="none" stroke="#854e4a" stroke-width="5" stroke-linecap="round"/>
-    
-  
+    <path d="M54 294 C136 333 386 335 466 292" fill="none" stroke="#e9eee6" stroke-width="18" stroke-linecap="round" opacity=".78"/>
+    <rect x="58" y="302" width="118" height="18" rx="11" fill="#d1e8ba" stroke="#a7ba95" stroke-width="3" transform="rotate(-2 117 311)"/>
+    <rect x="340" y="58" width="110" height="16" rx="11" fill="#93a9a7" stroke="#768786" stroke-width="3" transform="rotate(1 395 66)"/>
+  <path d="M258 73 L279 292" stroke="#2c4644" stroke-width="13" stroke-linecap="round"/><path d="M141 116 H341 L311 157 H141 Z" fill="#96ca62" transform="rotate(-12 240 136)"/><path d="M190 185 H421 L390 226 H190 Z" fill="#ff8a5f" transform="rotate(10 304 205)"/><path d="M83 238 H263 L233 279 H83 Z" fill="#6d8c89" transform="rotate(-8 173 258)"/><g transform="translate(381 252) scale(0.55)" >
+      <ellipse cx="0" cy="87" rx="72" ry="13" fill="#17201d" opacity=".16"/>
+      <polygon points="-39,8 39,8 57,70 -57,70" fill="#446b68" />
+      <polygon points="-39,8 0,24 -57,70" fill="#60817f" opacity=".8"/>
+      <polygon points="39,8 0,24 57,70" fill="#3a5c59" opacity=".76"/>
+      <path d="M-40 19 L-82 44 M40 18 L82 44" stroke="#537774" stroke-width="17" stroke-linecap="round"/>
+      <circle cx="-86" cy="46" r="10" fill="#efd0b9"/><circle cx="86" cy="46" r="10" fill="#efd0b9"/>
+      <g transform="translate(0 -64)">
+        <polygon points="-53,-30 -14,-61 39,-55 63,-16 51,38 0,56 -48,33" fill="#efd0b9" />
+        <polygon points="-53,-30 -14,-61 -8,0 -48,33" fill="#f1d5c0" opacity=".8"/>
+        <polygon points="39,-55 63,-16 51,38 7,-1" fill="#d2b7a3" opacity=".62"/>
+        <polygon points="-60,-25 -39,-72 -12,-45 11,-75 31,-43 63,-34 45,-6 -11,-30" fill="#1f2428" />
+        <path d="M-26 -14 L-7 -18 M7 -18 L27 -14" stroke="#2d2520" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="-18" cy="0" r="4.5" fill="#2d2520"/><circle cx="19" cy="0" r="4.5" fill="#2d2520"/>
+        <polygon points="0,0 -8,14 8,13" fill="#dcbfaa" opacity=".75"/>
+        <path d="M-18 23 Q0 9 18 23" fill="none" stroke="#854e4a" stroke-width="5" stroke-linecap="round"/>
       </g>
+      <circle cx="-41" cy="9" r="5" fill="#96ca62" opacity=".72"/><circle cx="40" cy="9" r="5" fill="#ff8a5f" opacity=".72"/>
     </g>
   
-  
-    <g transform="translate(34 42)">
-      <rect x="0" y="-20" width="184" height="36" rx="18" fill="#ffffff" opacity=".9"/>
-      <text x="16" y="2" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="800" fill="#26302c">Die-Wai-Director</text>
+    <g transform="translate(33 42)">
+      <rect x="0" y="-20" width="205" height="36" rx="18" fill="#ffffff" opacity=".92"/>
+      <text x="16" y="2" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="900" fill="#26302c" >Die-Wai-Director</text>
     </g>
   
 </svg>
