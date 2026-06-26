@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="720" viewBox="0 0 520 360" role="img" aria-labelledby="title desc">
+  <title id="title">吐槽役评测员</title>
+  <desc id="desc">Too-Chao-Reviewer sticker persona illustration</desc>
+  <defs>
+    <linearGradient id="bg-tucaoyi-pingceyuan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffeae5"/>
+      <stop offset="52%" stop-color="#fffef7"/>
+      <stop offset="100%" stop-color="#f8ebcc"/>
+    </linearGradient>
+    <filter id="shadow-tucaoyi-pingceyuan" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#111111" flood-opacity=".15"/>
+    </filter>
+  </defs>
+  <rect width="520" height="360" rx="32" fill="url(#bg-tucaoyi-pingceyuan)"/>
+  <path d="M34 74 H486 M34 122 H486 M34 170 H486 M34 218 H486 M34 266 H486 M82 32 V328 M146 32 V328 M210 32 V328 M274 32 V328 M338 32 V328 M402 32 V328 M466 32 V328" stroke="#ccc5d0" stroke-width="1" opacity=".32"/>
+  <g filter="url(#shadow-tucaoyi-pingceyuan)">
+    
+        <rect x="36" y="62" width="448" height="238" fill="#594964" rx="24"/>
+        <path d="M64 255 C132 213 388 213 456 255 L456 300 H64 Z" fill="#ffb4a2"/>
+        
+    <g transform="rotate(-8 76 95)">
+      <rect x="76" y="95" width="116" height="48" rx="18" fill="#fff2b8" stroke="#c7bd90" stroke-width="4"/>
+      <polygon points="104,139 121,167 134,139" fill="#fff2b8" />
+      <text x="94" y="126" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="900" fill="#233">离谱</text>
+    </g>
+  
+        
+    <g transform="rotate(9 318 93)">
+      <rect x="318" y="93" width="116" height="48" rx="18" fill="#ffd8ca" stroke="#c7a89e" stroke-width="4"/>
+      <polygon points="346,137 363,165 376,137" fill="#ffd8ca" />
+      <text x="336" y="124" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="900" fill="#233">笑死</text>
+    </g>
+  
+        <path d="M248 161 V245" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+        <circle cx="248" cy="144" r="25" fill="#fff" />
+        <path d="M222 245 H274" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+        
+    <g transform="translate(248 244) scale(0.48)">
+      <ellipse cx="0" cy="98" rx="78" ry="15" fill="#16201d" opacity=".14"/>
+      <polygon points="-45,20 45,20 62,84 -62,84" fill="#6d597a" />
+      <polygon points="-45,20 0,39 -62,84" fill="#877792" opacity=".78"/>
+      <polygon points="45,20 0,39 62,84" fill="#5c4b66" opacity=".78"/>
+      <path d="M-42 31 L-82 52 M42 31 L82 52" stroke="#746181" stroke-width="16" stroke-linecap="round"/>
+      <g transform="translate(0 -48)">
+        <polygon points="-54,-26 -15,-59 39,-52 63,-15 51,42 0,62 -49,39" fill="#efd0b8" />
+        <polygon points="-54,-26 -15,-59 -6,0 -49,39" fill="#f5dcca" opacity=".75"/>
+        <polygon points="39,-52 63,-15 51,42 8,-2" fill="#dcb49b" opacity=".5"/>
+        <polygon points="-61,-17 -41,-61 -14,-36 8,-65 31,-34 63,-22 45,5 -6,-22" fill="#24292e" />
+        <path d="M-27 -8 L-8 -14 M8 -14 L28 -8" stroke="#2b2520" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="-18" cy="6" r="4.5" fill="#2b2520" />
+        <circle cx="19" cy="6" r="4.5" fill="#2b2520" />
+        <path d="M-22 31 Q0 16 22 31" fill="none" stroke="#854e4a" stroke-width="5" stroke-linecap="round"/>
+      </g>
+    </g>
+  
+      
+  </g>
+  
+    <g transform="translate(32 36)">
+      <rect x="0" y="0" width="208" height="40" rx="20" fill="#ffffff" opacity=".92"/>
+      <text x="18" y="26" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="900" fill="#22302b">Too-Chao-Reviewer</text>
+    </g>
+  
+  
+    <g transform="translate(32 300)">
+      <rect x="0" y="-32" width="236" height="48" rx="16" fill="#ffffff" opacity=".9"/>
+      <text x="18" y="-1" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="900" fill="#1e2522">吐槽役评测员</text>
+    </g>
+  
+</svg>

@@ -259,3 +259,728 @@ button {
     display: none;
   }
 }
+
+.persona-theater {
+  isolation: isolate;
+}
+
+.persona-theater::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 24% 18%, rgba(223, 246, 117, 0.24), transparent 28%),
+    radial-gradient(circle at 76% 20%, rgba(114, 176, 255, 0.24), transparent 27%),
+    linear-gradient(135deg, rgba(255, 111, 151, 0.15), transparent 44%, rgba(34, 197, 94, 0.14));
+  pointer-events: none;
+}
+
+.persona-theater::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 72px),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 72px);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.72), transparent 82%);
+  pointer-events: none;
+}
+
+.persona-theater-orbit {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.persona-theater-orbit::before,
+.persona-theater-orbit::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: #dff675;
+  box-shadow: 0 0 32px rgba(223, 246, 117, 0.85);
+}
+
+.persona-theater-orbit-a {
+  width: 54vw;
+  height: 54vw;
+  min-width: 520px;
+  min-height: 520px;
+  right: -16vw;
+  top: -20vw;
+  animation: personaOrbit 18s linear infinite;
+}
+
+.persona-theater-orbit-a::before {
+  left: 20%;
+  top: 6%;
+}
+
+.persona-theater-orbit-a::after {
+  bottom: 10%;
+  right: 18%;
+  background: #7db4ff;
+  box-shadow: 0 0 32px rgba(125, 180, 255, 0.85);
+}
+
+.persona-theater-orbit-b {
+  width: 42vw;
+  height: 42vw;
+  min-width: 360px;
+  min-height: 360px;
+  left: -20vw;
+  bottom: -22vw;
+  animation: personaOrbit 24s linear infinite reverse;
+}
+
+.persona-theater-orbit-b::before {
+  right: 12%;
+  top: 28%;
+  background: #ff8cb3;
+  box-shadow: 0 0 32px rgba(255, 140, 179, 0.85);
+}
+
+.persona-theater-orbit-b::after {
+  left: 22%;
+  bottom: 9%;
+}
+
+.persona-theater-copy {
+  animation: personaCopyIn 720ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.persona-theater-hero-wrap {
+  position: relative;
+  width: min(100%, 680px);
+  margin-inline: auto;
+  animation: personaHeroIn 760ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.persona-theater-hero {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 34px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.05)),
+    #ffffff;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.28) inset,
+    0 34px 90px rgba(0, 0, 0, 0.42);
+  transform-origin: center;
+  animation: personaFloat 5.4s ease-in-out 900ms infinite;
+}
+
+.persona-theater-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.16), transparent 30%, transparent 70%, rgba(255, 255, 255, 0.12)),
+    repeating-linear-gradient(0deg, transparent 0 9px, rgba(17, 17, 17, 0.018) 9px 10px);
+  pointer-events: none;
+}
+
+.persona-dynamic-poster {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 20%, color-mix(in srgb, var(--scene-b) 54%, transparent), transparent 26%),
+    radial-gradient(circle at 84% 18%, color-mix(in srgb, var(--scene-c) 48%, transparent), transparent 28%),
+    linear-gradient(135deg, color-mix(in srgb, var(--scene-a) 36%, #ffffff), #ffffff 48%, color-mix(in srgb, var(--scene-c) 26%, #ffffff));
+  isolation: isolate;
+}
+
+.persona-dynamic-sky,
+.persona-dynamic-grid,
+.persona-dynamic-floor,
+.persona-dynamic-aura,
+.persona-dynamic-image,
+.persona-dynamic-title,
+.persona-dynamic-prop,
+.persona-dynamic-particle {
+  position: absolute;
+}
+
+.persona-dynamic-sky {
+  inset: 0;
+  z-index: 1;
+  background:
+    repeating-radial-gradient(circle at 28% 26%, rgba(255, 255, 255, 0.28) 0 1px, transparent 1px 22px),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.42), transparent 36%, rgba(17, 17, 17, 0.08));
+  mix-blend-mode: soft-light;
+}
+
+.persona-dynamic-grid {
+  inset: 0;
+  z-index: 2;
+  background:
+    repeating-linear-gradient(90deg, rgba(17, 17, 17, 0.055) 0 1px, transparent 1px 44px),
+    repeating-linear-gradient(0deg, rgba(17, 17, 17, 0.04) 0 1px, transparent 1px 44px);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.54), transparent 76%);
+}
+
+.persona-dynamic-title {
+  left: 1rem;
+  top: 1rem;
+  z-index: 8;
+  max-width: 62%;
+  overflow: hidden;
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 12px 28px rgba(17, 17, 17, 0.12);
+  color: #111111;
+  font-size: 0.82rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  padding: 0.55rem 0.78rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.persona-dynamic-image {
+  inset: 11% 10% 10%;
+  z-index: 5;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.7) inset,
+    0 28px 64px rgba(17, 17, 17, 0.2);
+  transform-origin: center;
+  animation: personaPosterMain 5.2s ease-in-out infinite;
+}
+
+.persona-dynamic-aura {
+  z-index: 3;
+  border-radius: 999px;
+  filter: blur(1px);
+  opacity: 0.72;
+}
+
+.persona-dynamic-aura-a {
+  width: 8rem;
+  height: 8rem;
+  left: 6%;
+  top: 24%;
+  background: color-mix(in srgb, var(--scene-a) 48%, transparent);
+  animation: personaAuraDrift 7s ease-in-out infinite;
+}
+
+.persona-dynamic-aura-b {
+  width: 11rem;
+  height: 11rem;
+  right: 4%;
+  top: 13%;
+  background: color-mix(in srgb, var(--scene-b) 42%, transparent);
+  animation: personaAuraDrift 8s ease-in-out 800ms infinite reverse;
+}
+
+.persona-dynamic-aura-c {
+  width: 9rem;
+  height: 9rem;
+  bottom: 8%;
+  left: 42%;
+  background: color-mix(in srgb, var(--scene-c) 40%, transparent);
+  animation: personaAuraDrift 6.4s ease-in-out 300ms infinite;
+}
+
+.persona-dynamic-floor {
+  left: 8%;
+  right: 8%;
+  bottom: 6%;
+  z-index: 4;
+  height: 22%;
+  border-radius: 999px 999px 18px 18px;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--scene-b) 38%, transparent), color-mix(in srgb, var(--scene-a) 28%, transparent)),
+    rgba(255, 255, 255, 0.42);
+  filter: blur(0.2px);
+  opacity: 0.76;
+  transform: perspective(240px) rotateX(58deg);
+}
+
+.persona-dynamic-prop {
+  z-index: 9;
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  border-radius: 18px;
+  background: rgba(17, 17, 17, 0.74);
+  box-shadow: 0 16px 34px rgba(17, 17, 17, 0.18);
+  color: #ffffff;
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.04em;
+  padding: 0.48rem 0.66rem;
+  white-space: nowrap;
+}
+
+.persona-dynamic-prop-1 {
+  left: 7%;
+  bottom: 25%;
+  animation: personaPropBob 3.7s ease-in-out infinite;
+}
+
+.persona-dynamic-prop-2 {
+  right: 8%;
+  top: 28%;
+  animation: personaPropBob 4.2s ease-in-out 500ms infinite reverse;
+}
+
+.persona-dynamic-prop-3 {
+  right: 12%;
+  bottom: 17%;
+  animation: personaPropBob 3.4s ease-in-out 900ms infinite;
+}
+
+.persona-dynamic-particle {
+  z-index: 10;
+  min-width: 2.3rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--scene-b) 76%, #ffffff);
+  box-shadow: 0 10px 22px rgba(17, 17, 17, 0.16);
+  color: #111111;
+  font-size: 0.7rem;
+  font-weight: 950;
+  padding: 0.34rem 0.5rem;
+  text-align: center;
+  white-space: nowrap;
+  animation: personaParticleDrift 4.8s ease-in-out infinite;
+}
+
+.persona-dynamic-particle-1 {
+  left: 18%;
+  top: 18%;
+}
+
+.persona-dynamic-particle-2 {
+  right: 19%;
+  top: 17%;
+  animation-delay: 500ms;
+  animation-direction: reverse;
+}
+
+.persona-dynamic-particle-3 {
+  left: 12%;
+  bottom: 16%;
+  animation-delay: 1100ms;
+}
+
+.persona-dynamic-particle-4 {
+  right: 15%;
+  bottom: 9%;
+  animation-delay: 1600ms;
+  animation-direction: reverse;
+}
+
+.persona-motion-rush .persona-dynamic-image {
+  animation-name: personaPosterRush;
+}
+
+.persona-motion-explode .persona-dynamic-aura,
+.persona-motion-explode .persona-dynamic-particle {
+  animation-name: personaPosterBurst;
+}
+
+.persona-motion-stamp .persona-dynamic-prop {
+  animation-name: personaPosterStamp;
+}
+
+.persona-motion-archive .persona-dynamic-prop,
+.persona-motion-archive .persona-dynamic-particle {
+  animation-name: personaPosterSlide;
+}
+
+.persona-motion-lab .persona-dynamic-particle {
+  animation-name: personaPosterBubble;
+}
+
+.persona-motion-blueprint .persona-dynamic-grid {
+  animation: personaBlueprintScan 3.8s linear infinite;
+}
+
+.persona-motion-zen .persona-dynamic-image,
+.persona-motion-zen .persona-dynamic-particle {
+  animation-name: personaPosterZen;
+}
+
+.persona-scene-volcano .persona-dynamic-floor {
+  height: 28%;
+  border-radius: 40% 46% 16px 16px;
+  background:
+    radial-gradient(circle at 50% 0%, #fff7ad 0 8%, #ff7a18 9% 22%, transparent 23%),
+    linear-gradient(180deg, #8a1c12, #2f0f0f);
+  clip-path: polygon(0 100%, 28% 20%, 50% 44%, 70% 12%, 100% 100%);
+  transform: none;
+}
+
+.persona-scene-blueprint .persona-dynamic-grid,
+.persona-scene-cosmic-miner .persona-dynamic-grid {
+  opacity: 0.9;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--scene-c) 42%, transparent) 1px, transparent 1px),
+    linear-gradient(0deg, color-mix(in srgb, var(--scene-c) 42%, transparent) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.persona-scene-secret-archive .persona-dynamic-grid,
+.persona-scene-treasure .persona-dynamic-grid,
+.persona-scene-restore .persona-dynamic-grid {
+  background:
+    repeating-linear-gradient(90deg, rgba(17, 17, 17, 0.06) 0 1px, transparent 1px 72px),
+    repeating-linear-gradient(0deg, rgba(17, 17, 17, 0.06) 0 1px, transparent 1px 54px);
+}
+
+.persona-scene-candy .persona-dynamic-prop,
+.persona-scene-candy .persona-dynamic-particle {
+  border-radius: 999px 999px 22px 22px;
+}
+
+.persona-scene-price,
+.persona-scene-ranking,
+.persona-scene-roast {
+  background:
+    radial-gradient(circle at 18% 20%, color-mix(in srgb, var(--scene-b) 34%, transparent), transparent 26%),
+    repeating-linear-gradient(-10deg, rgba(255, 255, 255, 0.18) 0 8px, transparent 8px 18px),
+    linear-gradient(135deg, color-mix(in srgb, var(--scene-a) 76%, #111111), #111111);
+}
+
+.persona-scene-zen .persona-dynamic-floor,
+.persona-scene-empty-hands .persona-dynamic-floor {
+  height: 18%;
+  border-radius: 60% 40% 999px 999px;
+  opacity: 0.52;
+}
+
+.persona-theater-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.85rem 1rem;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.9rem;
+  font-weight: 800;
+  backdrop-filter: blur(18px);
+}
+
+.persona-theater-caption span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.persona-theater-reel {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 1rem;
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+.persona-theater-track {
+  display: flex;
+  width: max-content;
+  gap: 0.85rem;
+  animation: personaReel 30s linear infinite;
+}
+
+.persona-theater-thumb {
+  position: relative;
+  width: 136px;
+  aspect-ratio: 10 / 7;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+}
+
+.persona-theater-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 44%, rgba(0, 0, 0, 0.62));
+  pointer-events: none;
+}
+
+.persona-theater-thumb span {
+  position: absolute;
+  bottom: 0.55rem;
+  left: 0.65rem;
+  right: 0.65rem;
+  z-index: 1;
+  overflow: hidden;
+  color: #ffffff;
+  font-size: 0.76rem;
+  font-weight: 900;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.persona-theater-progress {
+  position: relative;
+  height: 3px;
+  margin-top: 1rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.13);
+}
+
+.persona-theater-progress::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ff8cb3, #dff675, #7db4ff);
+  transform-origin: left;
+  animation: personaProgress 6.8s linear infinite;
+}
+
+.persona-theater-autonote {
+  margin-top: 0.9rem;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+@keyframes personaOrbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes personaCopyIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes personaHeroIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96) rotate(-2deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(1deg);
+  }
+}
+
+@keyframes personaFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(1deg);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(-1deg);
+  }
+}
+
+@keyframes personaReel {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes personaProgress {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes personaPosterMain {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0.6deg) scale(1);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(-0.8deg) scale(1.018);
+  }
+}
+
+@keyframes personaPosterRush {
+  0%,
+  100% {
+    transform: translateX(0) rotate(1.2deg) scale(1.01);
+  }
+
+  50% {
+    transform: translateX(8px) rotate(-1.6deg) scale(1.035);
+  }
+}
+
+@keyframes personaAuraDrift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(12px, -14px, 0) scale(1.08);
+  }
+}
+
+@keyframes personaPropBob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+@keyframes personaParticleDrift {
+  0%,
+  100% {
+    opacity: 0.78;
+    transform: translateY(0) rotate(-4deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-16px) rotate(5deg);
+  }
+}
+
+@keyframes personaPosterBurst {
+  0%,
+  100% {
+    transform: translateY(0) scale(0.92) rotate(0deg);
+  }
+
+  45% {
+    transform: translateY(-20px) scale(1.15) rotate(8deg);
+  }
+}
+
+@keyframes personaPosterStamp {
+  0%,
+  100% {
+    transform: translateY(0) scale(1) rotate(-3deg);
+  }
+
+  42% {
+    transform: translateY(10px) scale(0.94) rotate(1deg);
+  }
+
+  58% {
+    transform: translateY(-8px) scale(1.06) rotate(-2deg);
+  }
+}
+
+@keyframes personaPosterSlide {
+  0%,
+  100% {
+    transform: translateX(0) rotate(-1deg);
+  }
+
+  50% {
+    transform: translateX(16px) rotate(1.5deg);
+  }
+}
+
+@keyframes personaPosterBubble {
+  0%,
+  100% {
+    transform: translateY(8px) scale(0.9);
+  }
+
+  50% {
+    transform: translateY(-18px) scale(1.08);
+  }
+}
+
+@keyframes personaBlueprintScan {
+  from {
+    background-position: 0 0, 0 0;
+  }
+
+  to {
+    background-position: 30px 0, 0 30px;
+  }
+}
+
+@keyframes personaPosterZen {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-6px) scale(1.01);
+  }
+}
+
+@media (max-width: 768px) {
+  .persona-theater-caption {
+    align-items: flex-start;
+    border-radius: 20px;
+    flex-direction: column;
+    font-size: 0.82rem;
+  }
+
+  .persona-theater-thumb {
+    width: 112px;
+    border-radius: 14px;
+  }
+
+  .persona-theater-orbit-a {
+    right: -360px;
+    top: -280px;
+  }
+
+  .persona-theater-orbit-b {
+    left: -280px;
+    bottom: -260px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .persona-theater-copy,
+  .persona-theater-hero-wrap,
+  .persona-theater-hero,
+  .persona-theater-track,
+  .persona-theater-progress::before,
+  .persona-theater-orbit-a,
+  .persona-theater-orbit-b,
+  .persona-dynamic-image,
+  .persona-dynamic-aura,
+  .persona-dynamic-prop,
+  .persona-dynamic-particle,
+  .persona-dynamic-grid {
+    animation: none;
+  }
+}

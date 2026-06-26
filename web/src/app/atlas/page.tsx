@@ -5,7 +5,7 @@ import { getPersonaImageSrc, hiddenPersonaProfiles, personas } from "@/data/pers
 
 export const metadata: Metadata = {
   title: "人格图鉴 | 贴纸人格实验室",
-  description: "浏览 27 型贴纸人格、对应的中式英语外号，以及它们在造景、点评和收纳里的典型表现。",
+  description: "浏览 16 型贴纸人格、对应的中式英语外号，以及它们在购买、粘贴、点评和收纳里的典型表现。",
 };
 
 export default function AtlasPage() {
@@ -18,9 +18,9 @@ export default function AtlasPage() {
 
       <section className="mt-8 rounded-[36px] border border-neutral-200 bg-white p-6 shadow-sm sm:p-10">
         <div className="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">全部人格图鉴</div>
-        <h1 className="mt-4 text-4xl font-black text-neutral-950 sm:text-6xl">27 型贴纸人格</h1>
+        <h1 className="mt-4 text-4xl font-black text-neutral-950 sm:text-6xl">16 型贴纸人格</h1>
         <p className="mt-4 max-w-3xl text-lg leading-8 text-neutral-700">
-          每种人格都对应一种贴纸使用习惯：你怎么挑图、怎么评价、怎么收纳、又会把一页造景推到什么程度。
+          每种人格都对应一种贴纸使用习惯：你怎么购买、怎么粘贴、怎么点评、又怎么处理贴完的成品。
           每个结果都配有中式英语谐音，方便保存和分享。
         </p>
       </section>

@@ -13,8 +13,6 @@ const showcasePersonas = featured.map((persona) => ({
 }));
 
 export default function Home() {
-  const pills = ["人格昵称", "中式英语", "造景偏好", "收纳习惯"];
-
   return (
     <main className="immersive-home noise-grid relative isolate mx-auto flex min-h-screen w-full max-w-6xl flex-col px-4 py-6 sm:px-6">
       <ImmersiveParticleField />
@@ -29,30 +27,12 @@ export default function Home() {
       </header>
 
       <section className="home-hero poster-frame glow-panel sticker-card relative z-10 mt-8 overflow-hidden rounded-[44px] p-6 sm:p-10 lg:p-14">
-        <div className="absolute -left-3 top-6 rotate-[-10deg] rounded-full border border-black/10 bg-[#fff2a8] px-4 py-2 text-sm font-black text-neutral-950 shadow-lg">
-          轻松测试
-        </div>
-        <div className="absolute right-2 top-8 rotate-[8deg] rounded-full border border-black/10 bg-[#ffd1e0] px-4 py-2 text-sm font-black text-neutral-950 shadow-lg">
-          中式英语外号
-        </div>
-        <div className="absolute -bottom-3 right-6 rotate-[-8deg] rounded-full border border-black/10 bg-[#d8f36a] px-4 py-2 text-sm font-black text-neutral-950 shadow-lg">
-          贴纸习惯画像
-        </div>
-
         <div className="relative grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <div className="max-w-4xl">
-            <div className="mono-kicker text-xs font-semibold text-neutral-500">30 题 / 约 5 分钟 / 贴纸习惯测试</div>
+            <div className="mono-kicker text-xs font-semibold text-neutral-500">28 题 / 约 5 分钟 / 贴纸习惯测试</div>
             <h1 className="home-hero-title mt-6 max-w-4xl text-5xl font-black leading-[0.95] text-neutral-950 sm:text-7xl lg:text-[5.4rem]">
-              <span className="block">贴纸人格测试</span>
-              <span className="block">你是哪种人格</span>
+              贴纸人格实验室
             </h1>
-            <div className="mt-5 flex flex-wrap gap-2">
-              {pills.map((item) => (
-                <span key={item} className="rounded-full border border-black/8 bg-white/80 px-3 py-1 text-sm font-medium text-neutral-700">
-                  {item}
-                </span>
-              ))}
-            </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/quiz"
@@ -92,7 +72,7 @@ export default function Home() {
         <div className="mb-4 flex items-center justify-between">
           <h2 className="text-2xl font-black text-neutral-950">热门贴纸人格</h2>
           <Link href="/atlas" className="text-sm font-medium text-neutral-700 hover:text-neutral-950">
-            查看 27 型图鉴
+            查看 16 型图鉴
           </Link>
         </div>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
