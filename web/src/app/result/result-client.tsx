@@ -404,17 +404,18 @@ export function ResultClient() {
   const [introTheaterRequested, setIntroTheaterRequested] = useState(false);
   const [introTheaterConsumed, setIntroTheaterConsumed] = useState(false);
   const [hydrated, setHydrated] = useState(false);
+  const [isSharedView, setIsSharedView] = useState(false);
   const [sharedResult, setSharedResult] = useState<StoredResult | null>(null);
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
-    const decodedResult = decodeSharePayload(searchParams.get("r"));
-    const shouldPlayIntroTheater = searchParams.get("theater") === "1";
-    if (decodedResult) {
-      window.localStorage.setItem(storageKey, JSON.stringify(decodedResult));
-    }
+    const encodedResult = searchParams.get("r");
+    const isSharedResultPage = Boolean(encodedResult);
+    const decodedResult = decodeSharePayload(encodedResult);
+    const shouldPlayIntroTheater = !isSharedResultPage && searchParams.get("theater") === "1";
 
     const timer = window.setTimeout(() => {
+      setIsSharedView(isSharedResultPage);
       setSharedResult(decodedResult);
       setIntroTheaterRequested(shouldPlayIntroTheater);
       setHydrated(true);
@@ -427,7 +428,7 @@ export function ResultClient() {
 
   const result = useMemo<StoredResult | null>(() => {
     if (!hydrated) return null;
-    if (sharedResult) return sharedResult;
+    if (isSharedView) return sharedResult;
     const raw = window.localStorage.getItem(storageKey);
     if (!raw) return null;
 
@@ -445,7 +446,7 @@ export function ResultClient() {
       addictionTotal: parsed.addictionTotal ?? 0,
       addictionLevel: parsed.addictionLevel ?? getAddictionLevel(parsed.addictionTotal ?? 0),
     };
-  }, [hydrated, sharedResult]);
+  }, [hydrated, isSharedView, sharedResult]);
 
   useEffect(() => {
     if (!theaterOpen) return;
@@ -494,13 +495,15 @@ export function ResultClient() {
   if (!result) {
     return (
       <div className="mx-auto flex min-h-screen max-w-3xl flex-col items-start justify-center px-4 py-16 sm:px-6">
-        <h1 className="text-4xl font-black text-neutral-950">还没有测试结果。</h1>
-        <p className="mt-4 text-lg text-neutral-600">完成测试后，这里会生成你的贴纸人格结果。</p>
+        <h1 className="text-4xl font-black text-neutral-950">{isSharedView ? "这个分享链接失效了。" : "还没有测试结果。"}</h1>
+        <p className="mt-4 text-lg text-neutral-600">
+          {isSharedView ? "可能是链接不完整，或者结果数据没有成功带上。" : "完成测试后，这里会生成你的贴纸人格结果。"}
+        </p>
         <Link
           href="/quiz"
           className="mt-8 inline-flex items-center gap-2 rounded-full bg-neutral-950 px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-black/20 transition hover:-translate-y-0.5"
         >
-          <span className="text-white">开始测试</span>
+          <span className="text-white">{isSharedView ? "测出我的人格" : "开始测试"}</span>
           <span aria-hidden="true" className="text-white">
             →
           </span>
@@ -514,6 +517,7 @@ export function ResultClient() {
   const subtitle = result.persona.oneLiner;
   const mbtiComment = getMbtiComment(mbti, title);
   const styleKeywordText = result.styleKeywords.length > 0 ? result.styleKeywords.join("、") : "暂时没有明显画风偏好";
+  const theaterButtonText = isSharedView ? "观看 TA 的人格小剧场" : "播放人格小剧场";
 
   function copyTextWithSelection(text: string) {
     if (typeof document === "undefined") return false;
@@ -629,9 +633,15 @@ export function ResultClient() {
         <Link href="/atlas" className="hover:text-neutral-900">人格图鉴</Link>
       </div>
 
+      {isSharedView ? (
+        <div className="mt-6 rounded-[28px] border border-[#d9f99d] bg-[#f2ffd8] px-5 py-4 text-base font-semibold text-neutral-800 shadow-sm">
+          这是 TA 的贴纸人格结果。想看你自己的结果，可以从这里开始测。
+        </div>
+      ) : null}
+
       <section className="poster-frame glow-panel sticker-card relative mt-8 overflow-hidden rounded-[40px] p-6 sm:p-10">
         <div className="absolute left-4 top-4 rotate-[-8deg] rounded-full border border-black/10 bg-[#fff1a6] px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-neutral-950 shadow-lg sm:text-sm">
-          测试结果
+          {isSharedView ? "TA 的结果" : "测试结果"}
         </div>
         <div className="absolute right-4 top-6 rotate-[8deg] rounded-full border border-black/10 bg-[#ffd4ea] px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-neutral-950 shadow-lg sm:text-sm">
           贴纸人格卡
@@ -661,7 +671,7 @@ export function ResultClient() {
               onClick={openTheater}
               className="mt-6 inline-flex items-center gap-2 rounded-full bg-neutral-950 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-black/20 transition hover:-translate-y-0.5"
             >
-              <span className="text-white">播放人格小剧场</span>
+              <span className="text-white">{theaterButtonText}</span>
               <span aria-hidden="true" className="text-white">
                 ▶
               </span>
@@ -738,62 +748,78 @@ export function ResultClient() {
         </div>
       </section>
 
-      <section className="glow-panel sticker-card mt-6 rounded-[32px] p-6 sm:p-8">
-        <h2 className="text-2xl font-black text-neutral-950">MBTI 叠加解读</h2>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {mbtiOptions.map((item) => (
-            <button
-              key={item}
-              type="button"
-              onClick={() => setMbti(item)}
-              className={`rounded-full px-4 py-2 text-sm font-semibold transition ${mbti === item ? "bg-neutral-950 text-white shadow-lg shadow-black/10" : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"}`}
-            >
-              {item}
-            </button>
-          ))}
-        </div>
-        {mbtiComment ? (
-          <div className="mt-4 rounded-[24px] border border-neutral-200 bg-[#fff8ef] p-4">
-            <p className="text-base font-medium leading-7 text-neutral-700">{mbtiComment}</p>
+      {!isSharedView ? (
+        <section className="glow-panel sticker-card mt-6 rounded-[32px] p-6 sm:p-8">
+          <h2 className="text-2xl font-black text-neutral-950">MBTI 叠加解读</h2>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {mbtiOptions.map((item) => (
+              <button
+                key={item}
+                type="button"
+                onClick={() => setMbti(item)}
+                className={`rounded-full px-4 py-2 text-sm font-semibold transition ${mbti === item ? "bg-neutral-950 text-white shadow-lg shadow-black/10" : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"}`}
+              >
+                {item}
+              </button>
+            ))}
           </div>
-        ) : null}
-      </section>
+          {mbtiComment ? (
+            <div className="mt-4 rounded-[24px] border border-neutral-200 bg-[#fff8ef] p-4">
+              <p className="text-base font-medium leading-7 text-neutral-700">{mbtiComment}</p>
+            </div>
+          ) : null}
+        </section>
+      ) : null}
 
       <section className="mt-6 flex flex-wrap items-center gap-3">
-        <button
-          type="button"
-          onClick={handleShare}
-          className="inline-flex items-center gap-2 rounded-full bg-neutral-950 px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-black/20 transition hover:-translate-y-0.5"
-        >
-          <span className="text-white">分享结果</span>
-          <span aria-hidden="true" className="text-white">
-            ↗
-          </span>
-        </button>
+        {isSharedView ? (
+          <Link
+            href="/quiz"
+            className="inline-flex items-center gap-2 rounded-full bg-neutral-950 px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-black/20 transition hover:-translate-y-0.5"
+          >
+            <span className="text-white">我也测测</span>
+            <span aria-hidden="true" className="text-white">
+              →
+            </span>
+          </Link>
+        ) : (
+          <button
+            type="button"
+            onClick={handleShare}
+            className="inline-flex items-center gap-2 rounded-full bg-neutral-950 px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-black/20 transition hover:-translate-y-0.5"
+          >
+            <span className="text-white">分享结果</span>
+            <span aria-hidden="true" className="text-white">
+              ↗
+            </span>
+          </button>
+        )}
         <button
           type="button"
           aria-label="播放小剧场"
           onClick={openTheater}
           className="rounded-full border border-neutral-300 bg-white px-6 py-3 font-semibold text-neutral-900 transition hover:border-neutral-900"
         >
-          播放小剧场
+          {theaterButtonText}
         </button>
-        <Link
-          href="/quiz"
-          className="rounded-full border border-neutral-300 bg-white px-6 py-3 font-semibold text-neutral-900 transition hover:border-neutral-900"
-        >
-          再测一次
-        </Link>
+        {!isSharedView ? (
+          <Link
+            href="/quiz"
+            className="rounded-full border border-neutral-300 bg-white px-6 py-3 font-semibold text-neutral-900 transition hover:border-neutral-900"
+          >
+            再测一次
+          </Link>
+        ) : null}
         <Link href="/atlas" className="rounded-full border border-neutral-300 px-6 py-3 font-semibold text-neutral-900">
           浏览图鉴
         </Link>
-        {shareState === "shared" ? (
+        {!isSharedView && shareState === "shared" ? (
           <span className="text-sm font-medium text-neutral-500">已打开系统分享</span>
         ) : null}
-        {shareState === "copied" ? (
+        {!isSharedView && shareState === "copied" ? (
           <span className="text-sm font-medium text-neutral-500">分享文案和链接已复制，可直接粘贴发送</span>
         ) : null}
-        {shareState === "error" ? (
+        {!isSharedView && shareState === "error" ? (
           <span className="text-sm font-medium text-red-500">复制失败，请手动复制当前页面链接</span>
         ) : null}
       </section>
