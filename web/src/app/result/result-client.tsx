@@ -515,6 +515,42 @@ export function ResultClient() {
   const mbtiComment = getMbtiComment(mbti, title);
   const styleKeywordText = result.styleKeywords.length > 0 ? result.styleKeywords.join("、") : "暂时没有明显画风偏好";
 
+  function copyTextWithSelection(text: string) {
+    if (typeof document === "undefined") return false;
+
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "true");
+    textarea.style.position = "fixed";
+    textarea.style.left = "-9999px";
+    textarea.style.top = "0";
+    textarea.style.opacity = "0";
+
+    document.body.appendChild(textarea);
+    textarea.focus();
+    textarea.select();
+    textarea.setSelectionRange(0, textarea.value.length);
+
+    try {
+      return document.execCommand("copy");
+    } finally {
+      document.body.removeChild(textarea);
+    }
+  }
+
+  async function copyShareText(text: string) {
+    if (typeof navigator !== "undefined" && navigator.clipboard?.writeText) {
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch {
+        return copyTextWithSelection(text);
+      }
+    }
+
+    return copyTextWithSelection(text);
+  }
+
   async function handleShare() {
     if (typeof window === "undefined") return;
     const activeResult = result;
@@ -539,26 +575,26 @@ export function ResultClient() {
       text: `${title}｜${subtitle}`,
       url: shareUrl.toString(),
     };
+    const shareText = `${shareData.text}\n${shareData.url}`;
 
     try {
       if (typeof navigator !== "undefined" && navigator.share) {
-        await navigator.share(shareData);
-        setShareState("shared");
-        return;
+        try {
+          await navigator.share(shareData);
+          setShareState("shared");
+          return;
+        } catch (error) {
+          if (error instanceof Error && error.name === "AbortError") {
+            return;
+          }
+        }
       }
 
-      if (typeof navigator !== "undefined" && navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(`${shareData.text}\n${shareData.url}`);
-        setShareState("copied");
-        return;
-      }
-
-      setShareState("error");
-    } catch (error) {
-      if (error instanceof Error && error.name === "AbortError") {
-        return;
-      }
-      setShareState("error");
+      const copied = await copyShareText(shareText);
+      setShareState(copied ? "copied" : "error");
+    } catch {
+      const copied = copyTextWithSelection(shareText);
+      setShareState(copied ? "copied" : "error");
     }
   }
 
@@ -755,10 +791,10 @@ export function ResultClient() {
           <span className="text-sm font-medium text-neutral-500">已打开系统分享</span>
         ) : null}
         {shareState === "copied" ? (
-          <span className="text-sm font-medium text-neutral-500">分享文案和链接已复制</span>
+          <span className="text-sm font-medium text-neutral-500">分享文案和链接已复制，可直接粘贴发送</span>
         ) : null}
         {shareState === "error" ? (
-          <span className="text-sm font-medium text-red-500">当前浏览器不支持自动分享</span>
+          <span className="text-sm font-medium text-red-500">复制失败，请手动复制当前页面链接</span>
         ) : null}
       </section>
     </div>
