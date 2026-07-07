@@ -650,7 +650,7 @@ export function ResultClient() {
       ) : null}
 
       {theaterOpen ? (
-        <PersonaTheater result={result} autoCloseMs={theaterAutoClose ? 6800 : undefined} onClose={closeTheater} />
+        <PersonaTheater result={result} autoCloseMs={theaterAutoClose ? 3000 : undefined} onClose={closeTheater} />
       ) : null}
 
       <div className="flex items-center justify-between text-sm text-neutral-500">
