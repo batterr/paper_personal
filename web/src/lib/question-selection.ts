@@ -1,8 +1,8 @@
 const RANDOM_UINT32_MAX = 0x100000000;
 
-function getCryptoApi(): Crypto {
-  if (typeof globalThis.crypto === "undefined") {
-    throw new Error("Crypto API is unavailable in this environment.");
+function getCryptoApi(): Crypto | null {
+  if (typeof globalThis.crypto === "undefined" || typeof globalThis.crypto.getRandomValues !== "function") {
+    return null;
   }
   return globalThis.crypto;
 }
@@ -13,6 +13,10 @@ export function secureRandomInt(maxExclusive: number): number {
   }
 
   const cryptoApi = getCryptoApi();
+  if (!cryptoApi) {
+    return Math.floor(Math.random() * maxExclusive);
+  }
+
   const buffer = new Uint32Array(1);
   const cutoff = RANDOM_UINT32_MAX - (RANDOM_UINT32_MAX % maxExclusive);
 

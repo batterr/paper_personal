@@ -113,7 +113,11 @@ export function QuizClient() {
     setIndex(0);
     setAnswers([]);
     setStyleSelection(new Set());
-    window.localStorage.removeItem(resultStorageKey);
+    try {
+      window.localStorage.removeItem(resultStorageKey);
+    } catch {
+      // Embedded web-views can disable storage; quiz generation should still continue.
+    }
   }, []);
 
   useEffect(() => {
