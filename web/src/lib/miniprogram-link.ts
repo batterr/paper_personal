@@ -13,8 +13,11 @@ type MiniProgramResultPayload = {
 };
 
 type WechatMiniProgramBridge = {
-  navigateTo: (options: { url: string }) => void;
-  postMessage?: (options: { data: unknown }) => void;
+  navigateTo: (options: {
+    url: string;
+    success?: () => void;
+    fail?: () => void;
+  }) => void;
 };
 
 declare global {
@@ -94,11 +97,11 @@ export function shouldShowMiniProgramReturn(): boolean {
   return context.from === "miniprogram" || isMiniProgramRuntime();
 }
 
-export function returnPersonaResultToMiniProgram(result: MiniProgramResultPayload): boolean {
-  if (typeof window === "undefined") return false;
+export function returnPersonaResultToMiniProgram(result: MiniProgramResultPayload): Promise<boolean> {
+  if (typeof window === "undefined") return Promise.resolve(false);
 
   const miniProgram = window.wx?.miniProgram;
-  if (!miniProgram?.navigateTo) return false;
+  if (!miniProgram?.navigateTo) return Promise.resolve(false);
 
   const payload = {
     personaCode: result.persona.code,
@@ -116,14 +119,28 @@ export function returnPersonaResultToMiniProgram(result: MiniProgramResultPayloa
   });
 
   const url = `/pages/persona/result/index?${query.toString()}`;
-  miniProgram.postMessage?.({
-    data: {
-      type: "sticker-persona-result",
-      payload,
-    },
+  return new Promise((resolve) => {
+    let settled = false;
+    const settle = (ok: boolean) => {
+      if (settled) return;
+      settled = true;
+      resolve(ok);
+    };
+
+    window.setTimeout(() => {
+      try {
+        miniProgram.navigateTo({
+          url,
+          success: () => settle(true),
+          fail: () => settle(false),
+        });
+      } catch {
+        settle(false);
+      }
+    }, 80);
+
+    window.setTimeout(() => settle(true), 1200);
   });
-  miniProgram.navigateTo({ url });
-  return true;
 }
 
 export {};

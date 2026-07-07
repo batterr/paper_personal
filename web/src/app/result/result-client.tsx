@@ -621,9 +621,11 @@ export function ResultClient() {
     setTheaterOpen(true);
   }
 
-  function handleMiniProgramReturn() {
+  async function handleMiniProgramReturn() {
     if (!result) return;
-    const ok = returnPersonaResultToMiniProgram(result);
+    if (miniProgramReturnState === "sent") return;
+    setMiniProgramReturnState("sent");
+    const ok = await returnPersonaResultToMiniProgram(result);
     setMiniProgramReturnState(ok ? "sent" : "error");
   }
 
@@ -805,9 +807,10 @@ export function ResultClient() {
           <button
             type="button"
             onClick={handleMiniProgramReturn}
-            className="inline-flex items-center gap-2 rounded-full bg-[#00856f] px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-emerald-900/20 transition hover:-translate-y-0.5"
+            disabled={miniProgramReturnState === "sent"}
+            className="inline-flex items-center gap-2 rounded-full bg-[#00856f] px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-emerald-900/20 transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70"
           >
-            <span className="text-white">回纸评看我的贴纸推荐</span>
+            <span className="text-white">{miniProgramReturnState === "sent" ? "正在回到纸评..." : "回纸评看我的贴纸推荐"}</span>
             <span aria-hidden="true" className="text-white">
               →
             </span>
