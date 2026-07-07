@@ -10,6 +10,7 @@ import {
   type QuizItem,
   type StyleQuestion,
 } from "@/data/questions";
+import { persistMiniProgramEntryContext, type MiniProgramEntryContext } from "@/lib/miniprogram-link";
 import { secureShuffle } from "@/lib/question-selection";
 import { buildResult, defaultScores, type FullScoreMap } from "@/lib/scoring";
 
@@ -105,6 +106,7 @@ export function QuizClient() {
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<RecordedAnswer[]>([]);
   const [styleSelection, setStyleSelection] = useState<Set<number>>(new Set());
+  const [entryContext, setEntryContext] = useState<MiniProgramEntryContext | null>(null);
 
   const drawQuiz = useCallback(() => {
     setOrderedItems(secureShuffle(allQuizItems).map(shuffleQuizItem));
@@ -117,6 +119,7 @@ export function QuizClient() {
   useEffect(() => {
     if (initializedRef.current) return;
     initializedRef.current = true;
+    setEntryContext(persistMiniProgramEntryContext(new URLSearchParams(window.location.search)));
     drawQuiz();
   }, [drawQuiz]);
 
@@ -240,6 +243,11 @@ export function QuizClient() {
       </div>
 
       <h1 className="max-w-2xl text-3xl font-black leading-tight text-neutral-950 sm:text-5xl">
+        {entryContext?.nickname ? (
+          <span className="mb-3 block text-base font-bold leading-6 text-[#2f7d48] sm:text-lg">
+            {entryContext.nickname}，开始测你的贴纸人格
+          </span>
+        ) : null}
         {currentItem.title}
       </h1>
       <p className="mt-4 max-w-xl text-sm text-neutral-500 sm:text-base">{subtitle}</p>

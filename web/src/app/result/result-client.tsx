@@ -2,9 +2,16 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { getPersonaImageSrc, hiddenPersonaProfiles, personas } from "@/data/personas";
 import { dimensionLabels } from "@/data/questions";
+import {
+  persistMiniProgramEntryContext,
+  returnPersonaResultToMiniProgram,
+  shouldShowMiniProgramReturn,
+  type MiniProgramEntryContext,
+} from "@/lib/miniprogram-link";
 import { getAddictionLevel, getMbtiComment } from "@/lib/scoring";
 
 const storageKey = "sticker-persona-result";
@@ -406,15 +413,19 @@ export function ResultClient() {
   const [hydrated, setHydrated] = useState(false);
   const [isSharedView, setIsSharedView] = useState(false);
   const [sharedResult, setSharedResult] = useState<StoredResult | null>(null);
+  const [miniProgramEntryContext, setMiniProgramEntryContext] = useState<MiniProgramEntryContext | null>(null);
+  const [miniProgramReturnState, setMiniProgramReturnState] = useState<"idle" | "sent" | "error">("idle");
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
+    const entryContext = persistMiniProgramEntryContext(searchParams);
     const encodedResult = searchParams.get("r");
     const isSharedResultPage = Boolean(encodedResult);
     const decodedResult = decodeSharePayload(encodedResult);
     const shouldPlayIntroTheater = !isSharedResultPage && searchParams.get("theater") === "1";
 
     const timer = window.setTimeout(() => {
+      setMiniProgramEntryContext(entryContext);
       setIsSharedView(isSharedResultPage);
       setSharedResult(decodedResult);
       setIntroTheaterRequested(shouldPlayIntroTheater);
@@ -518,6 +529,8 @@ export function ResultClient() {
   const mbtiComment = getMbtiComment(mbti, title);
   const styleKeywordText = result.styleKeywords.length > 0 ? result.styleKeywords.join("、") : "暂时没有明显画风偏好";
   const theaterButtonText = isSharedView ? "观看 TA 的人格小剧场" : "播放人格小剧场";
+  const showMiniProgramReturn = !isSharedView && shouldShowMiniProgramReturn();
+  const miniProgramNickname = miniProgramEntryContext?.nickname || "";
 
   function copyTextWithSelection(text: string) {
     if (typeof document === "undefined") return false;
@@ -608,6 +621,12 @@ export function ResultClient() {
     setTheaterOpen(true);
   }
 
+  function handleMiniProgramReturn() {
+    if (!result) return;
+    const ok = returnPersonaResultToMiniProgram(result);
+    setMiniProgramReturnState(ok ? "sent" : "error");
+  }
+
   function closeTheater() {
     if (typeof window !== "undefined") {
       const url = new URL(window.location.href);
@@ -624,6 +643,10 @@ export function ResultClient() {
 
   return (
     <div className="noise-grid mx-auto flex min-h-screen w-full max-w-5xl flex-col px-4 py-6 sm:px-6">
+      {showMiniProgramReturn ? (
+        <Script src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js" strategy="afterInteractive" />
+      ) : null}
+
       {theaterOpen ? (
         <PersonaTheater result={result} autoCloseMs={theaterAutoClose ? 6800 : undefined} onClose={closeTheater} />
       ) : null}
@@ -636,6 +659,12 @@ export function ResultClient() {
       {isSharedView ? (
         <div className="mt-6 rounded-[28px] border border-[#d9f99d] bg-[#f2ffd8] px-5 py-4 text-base font-semibold text-neutral-800 shadow-sm">
           这是 TA 的贴纸人格结果。想看你自己的结果，可以从这里开始测。
+        </div>
+      ) : null}
+
+      {showMiniProgramReturn ? (
+        <div className="mt-6 rounded-[28px] border border-[#b7eadf] bg-[#ecfbf7] px-5 py-4 text-base font-semibold text-neutral-800 shadow-sm">
+          {miniProgramNickname ? `${miniProgramNickname}，` : ""}结果已准备好，可以回纸评看你的贴纸推荐。
         </div>
       ) : null}
 
@@ -772,6 +801,18 @@ export function ResultClient() {
       ) : null}
 
       <section className="mt-6 flex flex-wrap items-center gap-3">
+        {showMiniProgramReturn ? (
+          <button
+            type="button"
+            onClick={handleMiniProgramReturn}
+            className="inline-flex items-center gap-2 rounded-full bg-[#00856f] px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-emerald-900/20 transition hover:-translate-y-0.5"
+          >
+            <span className="text-white">回纸评看我的贴纸推荐</span>
+            <span aria-hidden="true" className="text-white">
+              →
+            </span>
+          </button>
+        ) : null}
         {isSharedView ? (
           <Link
             href="/quiz"
@@ -821,6 +862,12 @@ export function ResultClient() {
         ) : null}
         {!isSharedView && shareState === "error" ? (
           <span className="text-sm font-medium text-red-500">复制失败，请手动复制当前页面链接</span>
+        ) : null}
+        {showMiniProgramReturn && miniProgramReturnState === "sent" ? (
+          <span className="text-sm font-medium text-neutral-500">正在打开纸评小程序...</span>
+        ) : null}
+        {showMiniProgramReturn && miniProgramReturnState === "error" ? (
+          <span className="text-sm font-medium text-red-500">没有唤起成功，可以返回小程序后再试一次</span>
         ) : null}
       </section>
     </div>
