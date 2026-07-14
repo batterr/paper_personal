@@ -29,7 +29,7 @@ export default function Home() {
       <section className="home-hero poster-frame glow-panel sticker-card relative z-10 mt-8 overflow-hidden rounded-[44px] p-6 sm:p-10 lg:p-14">
         <div className="relative grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <div className="max-w-4xl">
-            <div className="mono-kicker text-xs font-semibold text-neutral-500">28 题 / 约 5 分钟 / 贴纸习惯测试</div>
+            <div className="mono-kicker text-xs font-semibold text-neutral-500">20 题 / 约 3 分钟 / 贴纸习惯测试</div>
             <h1 className="home-hero-title mt-6 max-w-4xl text-5xl font-black leading-[0.95] text-neutral-950 sm:text-7xl lg:text-[5.4rem]">
               贴纸人格实验室
             </h1>

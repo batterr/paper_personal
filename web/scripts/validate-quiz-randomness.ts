@@ -10,7 +10,13 @@ import {
   styleQuestions,
 } from "../src/data/questions";
 import { buildResult, defaultScores, getAddictionLevel, getPersonaCode } from "../src/lib/scoring";
-import { secureShuffle } from "../src/lib/question-selection";
+import {
+  ADDICTION_QUESTIONS_PER_QUIZ,
+  buildQuizItems,
+  PERSONALITY_QUESTIONS_PER_DIMENSION,
+  QUIZ_TOTAL_QUESTION_COUNT,
+  STYLE_QUESTIONS_PER_QUIZ,
+} from "../src/lib/question-selection";
 
 function runValidation() {
   assert.ok(personalityQuestionGroups, "题库需要导出 personalityQuestionGroups");
@@ -23,6 +29,7 @@ function runValidation() {
   assert.equal(styleQuestions.length, 4, "画风题必须正好 4 题");
   assert.equal(addictionQuestions.length, 4, "沉迷浓度题必须正好 4 题");
   assert.equal(allQuizItems.length, 28, "总题量必须正好 28 题");
+  assert.equal(QUIZ_TOTAL_QUESTION_COUNT, 20, "单次测试必须正好 20 题");
   assert.equal(personas.length, 16, "人格结果必须正好 16 个");
 
   for (const dimension of personalityDimensions) {
@@ -72,33 +79,64 @@ function runValidation() {
     }
   }
 
+  const fourQuestionMaximums = { buy: 4, paste: 4, review: 4, keep: 4 };
+  assert.equal(
+    getPersonaCode({ buy: 2, paste: 2, review: 2, keep: 2 }, fourQuestionMaximums),
+    "1111",
+    "4 题制维度需要按实际题量判断人格 code",
+  );
+
   assert.equal(getAddictionLevel(0).name, "还有得救", "沉迷 0 分等级不正确");
   assert.equal(getAddictionLevel(2).name, "施主，回头是岸", "沉迷 2 分等级不正确");
   assert.equal(getAddictionLevel(4).name, "40度高烧发烧友", "沉迷 4 分等级不正确");
   assert.equal(getAddictionLevel(6).name, "你将全职进入造景世界", "沉迷 6 分等级不正确");
 
   const result = buildResult({
-    scores: { ...defaultScores, buy: 5, paste: 5, review: 5, keep: 5 },
+    scores: { ...defaultScores, buy: 4, paste: 4, review: 4, keep: 4 },
+    scoreMaximums: fourQuestionMaximums,
     selectedKeywords: ["码货", "复古"],
     addictionTotal: 4,
   });
   assert.equal(result.persona.code, "1111", "满分人格应该命中 1111");
+  assert.equal(result.percentages.buy, 100, "4 题制满分维度应该显示 100%");
   assert.deepEqual(result.styleKeywords, ["码货", "复古"], "结果必须保留画风关键词");
   assert.equal(result.addictionLevel.name, "40度高烧发烧友", "结果必须保留沉迷等级");
 
   const orderSignatures = new Set<string>();
   const firstQuestionIds = new Set<string>();
+  const selectedQuestionIds = new Set<string>();
   const simulationCount = 300;
   for (let round = 0; round < simulationCount; round += 1) {
-    const shuffled = secureShuffle(allQuizItems);
-    assert.equal(new Set(shuffled.map((item) => item.id)).size, allQuizItems.length, "洗牌后题目不应重复");
-    orderSignatures.add(shuffled.map((item) => item.id).join(","));
-    firstQuestionIds.add(shuffled[0]?.id ?? "");
+    const quizItems = buildQuizItems();
+    assert.equal(quizItems.length, QUIZ_TOTAL_QUESTION_COUNT, "单次测试题量必须正好 20 题");
+    assert.equal(new Set(quizItems.map((item) => item.id)).size, quizItems.length, "抽题后题目不应重复");
+
+    const selectedPersonalityQuestions = quizItems.filter((item) => item.type === "personality");
+    const selectedStyleQuestions = quizItems.filter((item) => item.type === "style");
+    const selectedAddictionQuestions = quizItems.filter((item) => item.type === "addiction");
+
+    assert.equal(selectedPersonalityQuestions.length, personalityDimensions.length * PERSONALITY_QUESTIONS_PER_DIMENSION);
+    assert.equal(selectedStyleQuestions.length, STYLE_QUESTIONS_PER_QUIZ);
+    assert.equal(selectedAddictionQuestions.length, ADDICTION_QUESTIONS_PER_QUIZ);
+
+    for (const dimension of personalityDimensions) {
+      assert.equal(
+        selectedPersonalityQuestions.filter((item) => item.dimension === dimension.key).length,
+        PERSONALITY_QUESTIONS_PER_DIMENSION,
+        `${dimension.key} 维度单次测试必须抽 ${PERSONALITY_QUESTIONS_PER_DIMENSION} 题`,
+      );
+    }
+
+    quizItems.forEach((item) => selectedQuestionIds.add(item.id));
+    orderSignatures.add(quizItems.map((item) => item.id).join(","));
+    firstQuestionIds.add(quizItems[0]?.id ?? "");
   }
 
   assert.ok(orderSignatures.size > simulationCount * 0.95, "题目顺序随机性不足");
-  assert.ok(firstQuestionIds.size >= 18, "首题分布不够随机");
+  assert.ok(firstQuestionIds.size >= 14, "首题分布不够随机");
+  assert.equal(selectedQuestionIds.size, allQuizItems.length, "长期抽题应该覆盖完整题库");
 
+  console.log("单次测试题:", QUIZ_TOTAL_QUESTION_COUNT);
   console.log("人格题:", personalityQuestions.length);
   console.log("画风题:", styleQuestions.length);
   console.log("沉迷题:", addictionQuestions.length);

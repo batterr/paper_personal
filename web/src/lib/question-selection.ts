@@ -1,4 +1,19 @@
+import {
+  addictionQuestions,
+  personalityDimensions,
+  personalityQuestionGroups,
+  styleQuestions,
+  type QuizItem,
+} from "@/data/questions";
+
 const RANDOM_UINT32_MAX = 0x100000000;
+export const PERSONALITY_QUESTIONS_PER_DIMENSION = 4;
+export const STYLE_QUESTIONS_PER_QUIZ = 2;
+export const ADDICTION_QUESTIONS_PER_QUIZ = 2;
+export const QUIZ_TOTAL_QUESTION_COUNT =
+  personalityDimensions.length * PERSONALITY_QUESTIONS_PER_DIMENSION +
+  STYLE_QUESTIONS_PER_QUIZ +
+  ADDICTION_QUESTIONS_PER_QUIZ;
 
 function getCryptoApi(): Crypto | null {
   if (typeof globalThis.crypto === "undefined" || typeof globalThis.crypto.getRandomValues !== "function") {
@@ -36,4 +51,18 @@ export function secureShuffle<T>(items: readonly T[]): T[] {
     [copy[index], copy[swapIndex]] = [copy[swapIndex], copy[index]];
   }
   return copy;
+}
+
+function takeShuffled<T>(items: readonly T[], count: number): T[] {
+  return secureShuffle(items).slice(0, count);
+}
+
+export function buildQuizItems(): QuizItem[] {
+  const personalityItems = personalityDimensions.flatMap((dimension) =>
+    takeShuffled(personalityQuestionGroups[dimension.key], PERSONALITY_QUESTIONS_PER_DIMENSION),
+  );
+  const styleItems = takeShuffled(styleQuestions, STYLE_QUESTIONS_PER_QUIZ);
+  const addictionItems = takeShuffled(addictionQuestions, ADDICTION_QUESTIONS_PER_QUIZ);
+
+  return secureShuffle([...personalityItems, ...styleItems, ...addictionItems]);
 }

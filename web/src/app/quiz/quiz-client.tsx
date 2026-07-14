@@ -4,14 +4,13 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
-  allQuizItems,
   type AddictionQuestion,
   type PersonalityQuestion,
   type QuizItem,
   type StyleQuestion,
 } from "@/data/questions";
 import { persistMiniProgramEntryContext, type MiniProgramEntryContext } from "@/lib/miniprogram-link";
-import { secureShuffle } from "@/lib/question-selection";
+import { buildQuizItems, QUIZ_TOTAL_QUESTION_COUNT, secureShuffle } from "@/lib/question-selection";
 import { buildResult, defaultScores, type FullScoreMap } from "@/lib/scoring";
 
 const resultStorageKey = "sticker-persona-result";
@@ -32,6 +31,7 @@ type RecordedAnswer =
       itemId: string;
       type: "addiction";
       score: number;
+      maxScore: number;
     };
 
 function shufflePersonalityQuestion(question: PersonalityQuestion): PersonalityQuestion {
@@ -79,12 +79,15 @@ function shuffleQuizItem(item: QuizItem): QuizItem {
 
 function summarizeAnswers(answers: RecordedAnswer[]) {
   const scores: FullScoreMap = { ...defaultScores };
+  const scoreMaximums: FullScoreMap = { ...defaultScores };
   const selectedKeywords = new Set<string>();
   let addictionTotal = 0;
+  let addictionMaximum = 0;
 
   for (const answer of answers) {
     if (answer.type === "personality") {
       scores[answer.dimension] += answer.score;
+      scoreMaximums[answer.dimension] += 1;
       continue;
     }
 
@@ -94,9 +97,13 @@ function summarizeAnswers(answers: RecordedAnswer[]) {
     }
 
     addictionTotal += answer.score;
+    addictionMaximum += answer.maxScore;
   }
 
-  return { scores, selectedKeywords, addictionTotal };
+  const normalizedAddictionTotal =
+    addictionMaximum > 0 ? Math.round((addictionTotal / addictionMaximum) * 6) : 0;
+
+  return { scores, scoreMaximums, selectedKeywords, addictionTotal: normalizedAddictionTotal };
 }
 
 export function QuizClient() {
@@ -109,7 +116,7 @@ export function QuizClient() {
   const [entryContext, setEntryContext] = useState<MiniProgramEntryContext | null>(null);
 
   const drawQuiz = useCallback(() => {
-    setOrderedItems(secureShuffle(allQuizItems).map(shuffleQuizItem));
+    setOrderedItems(buildQuizItems().map(shuffleQuizItem));
     setIndex(0);
     setAnswers([]);
     setStyleSelection(new Set());
@@ -128,7 +135,7 @@ export function QuizClient() {
   }, [drawQuiz]);
 
   const currentItem = orderedItems?.[index] ?? null;
-  const progressTotal = orderedItems?.length ?? allQuizItems.length;
+  const progressTotal = orderedItems?.length ?? QUIZ_TOTAL_QUESTION_COUNT;
   const progressCurrent = Math.min(index + 1, progressTotal);
 
   const subtitle = useMemo(() => {
@@ -183,6 +190,7 @@ export function QuizClient() {
       itemId: question.id,
       type: "addiction",
       score: question.scores[optionIndex] ?? 0,
+      maxScore: Math.max(...question.scores),
     });
   }
 

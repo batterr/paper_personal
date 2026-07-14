@@ -26,6 +26,7 @@ export type QuizResult = {
 
 export type BuildResultInput = {
   scores: FullScoreMap;
+  scoreMaximums?: FullScoreMap;
   selectedKeywords: Iterable<string>;
   addictionTotal: number;
 };
@@ -37,26 +38,47 @@ export const defaultScores: FullScoreMap = {
   keep: 0,
 };
 
-export function getPersonaCode(scores: FullScoreMap): string {
-  return [
-    scores.buy >= 3 ? "1" : "0",
-    scores.paste >= 3 ? "1" : "0",
-    scores.review >= 3 ? "1" : "0",
-    scores.keep >= 3 ? "1" : "0",
-  ].join("");
+export const defaultScoreMaximums: FullScoreMap = {
+  buy: 5,
+  paste: 5,
+  review: 5,
+  keep: 5,
+};
+
+function resolveScoreMaximums(scoreMaximums?: Partial<FullScoreMap>): FullScoreMap {
+  return {
+    buy: scoreMaximums?.buy || defaultScoreMaximums.buy,
+    paste: scoreMaximums?.paste || defaultScoreMaximums.paste,
+    review: scoreMaximums?.review || defaultScoreMaximums.review,
+    keep: scoreMaximums?.keep || defaultScoreMaximums.keep,
+  };
 }
 
-export function getPersona(scores: FullScoreMap) {
-  const code = getPersonaCode(scores);
+function isHighDimensionScore(score: number, maximum: number) {
+  return score >= Math.ceil(maximum / 2);
+}
+
+export function getPersonaCode(scores: FullScoreMap, scoreMaximums?: Partial<FullScoreMap>): string {
+  const maximums = resolveScoreMaximums(scoreMaximums);
+
+  return personalityDimensions
+    .map((dimension) => (isHighDimensionScore(scores[dimension.key], maximums[dimension.key]) ? "1" : "0"))
+    .join("");
+}
+
+export function getPersona(scores: FullScoreMap, scoreMaximums?: Partial<FullScoreMap>) {
+  const code = getPersonaCode(scores, scoreMaximums);
   return personas.find((persona) => persona.code === code) ?? personas.find((persona) => persona.code === "0000") ?? personas[0];
 }
 
-export function toPercentages(scores: FullScoreMap): FullScoreMap {
+export function toPercentages(scores: FullScoreMap, scoreMaximums?: Partial<FullScoreMap>): FullScoreMap {
+  const maximums = resolveScoreMaximums(scoreMaximums);
+
   return {
-    buy: Math.round((scores.buy / 5) * 100),
-    paste: Math.round((scores.paste / 5) * 100),
-    review: Math.round((scores.review / 5) * 100),
-    keep: Math.round((scores.keep / 5) * 100),
+    buy: Math.min(100, Math.round((scores.buy / maximums.buy) * 100)),
+    paste: Math.min(100, Math.round((scores.paste / maximums.paste) * 100)),
+    review: Math.min(100, Math.round((scores.review / maximums.review) * 100)),
+    keep: Math.min(100, Math.round((scores.keep / maximums.keep) * 100)),
   };
 }
 
@@ -89,8 +111,9 @@ export function getAddictionLevel(total: number): AddictionLevel {
 }
 
 export function buildResult(input: BuildResultInput): QuizResult {
-  const persona = getPersona(input.scores);
-  const percentages = toPercentages(input.scores);
+  const scoreMaximums = resolveScoreMaximums(input.scoreMaximums);
+  const persona = getPersona(input.scores, scoreMaximums);
+  const percentages = toPercentages(input.scores, scoreMaximums);
   const topDimension =
     personalityDimensions
       .map((dimension) => dimension.key)

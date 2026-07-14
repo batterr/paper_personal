@@ -13,6 +13,12 @@ import {
   personalityQuestionGroups,
   styleQuestions,
 } from "../src/data/questions";
+import {
+  ADDICTION_QUESTIONS_PER_QUIZ,
+  PERSONALITY_QUESTIONS_PER_DIMENSION,
+  QUIZ_TOTAL_QUESTION_COUNT,
+  STYLE_QUESTIONS_PER_QUIZ,
+} from "../src/lib/question-selection";
 
 function buildParagraphs() {
   const paragraphs: Paragraph[] = [];
@@ -38,6 +44,10 @@ function buildParagraphs() {
         }),
         new TextRun({
           text: `沉迷浓度题：${addictionQuestions.length} 题`,
+          break: 1,
+        }),
+        new TextRun({
+          text: `单次测试：${QUIZ_TOTAL_QUESTION_COUNT} 题（每维度 ${PERSONALITY_QUESTIONS_PER_DIMENSION} 题，画风 ${STYLE_QUESTIONS_PER_QUIZ} 题，沉迷 ${ADDICTION_QUESTIONS_PER_QUIZ} 题）`,
           break: 1,
         }),
       ],

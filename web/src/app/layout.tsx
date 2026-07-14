@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "贴纸人格实验室",
-  description: "用 30 道贴纸造景、收纳与点评情境，生成你的贴纸人格和中式英语外号。",
+  description: "用 20 道贴纸造景、收纳与点评情境，生成你的贴纸人格和中式英语外号。",
 };
 
 export default function RootLayout({
