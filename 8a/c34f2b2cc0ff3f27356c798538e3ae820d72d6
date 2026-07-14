@@ -1,0 +1,35 @@
+web/scripts/generate-questions-doc.ts
+  s_290b175184ae16::t_6577737227b54e 16-21,49-52
+web/scripts/validate-quiz-randomness.ts
+  s_290b175184ae16::t_363614b3b5f2a7 13-19,32,82-88,95-96,101,107,110-132,136-137,139
+web/src/app/layout.tsx
+  s_290b175184ae16::t_50c78ddabcd99b 17
+web/src/app/page.tsx
+  s_290b175184ae16::t_31fafc7c90e914 32
+web/src/app/quiz/page.tsx
+  s_290b175184ae16::t_8eeb2b4413d297 6
+web/src/app/quiz/quiz-client.tsx
+  s_290b175184ae16::t_512394955e2176 13,34,82,85,90,100,103-106,119,138,193
+web/src/lib/question-selection.ts
+  s_290b175184ae16::t_e91af16a1cc0b8 1-8,10-16,55-68
+web/src/lib/scoring.ts
+  s_290b175184ae16::t_7ed7044407654e 29,41-58,61-70,74-76,78-81,114-116
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "8ac34f2b2cc0ff3f27356c798538e3ae820d72d6",
+  "prompts": {},
+  "sessions": {
+    "s_290b175184ae16": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e010e-4a7f-7670-a586-98482d6d58aa",
+        "model": "unknown"
+      },
+      "human_author": "Serein <oncwnuIFSUop74vWbFeH7Ebco7kY@git.weixin.qq.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
